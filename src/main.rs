@@ -46,7 +46,7 @@ struct Name {
     #[clap(short, long)]
     shiny: bool,
 
-    /// Do not display pokemon name
+    /// Display pokemon name
     #[clap(short, long)]
     title: bool,
 }
@@ -57,9 +57,21 @@ struct Random {
     #[clap(default_value = "1-8")]
     generations: String,
 
-    /// Do not display pokemon name
+    /// Display pokemon name
     #[clap(short, long)]
     title: bool,
+
+    /// Do not show mega pokemon
+    #[clap(long)]
+    no_mega: bool,
+
+    /// Do not show gigantamax pokemon
+    #[clap(long)]
+    no_gmax: bool,
+
+    /// Do not show regional pokemon
+    #[clap(long)]
+    no_regional: bool,
 }
 
 fn list_pokemon_names(pokemon_db: &[Pokemon]) {
@@ -103,10 +115,35 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon]) -> Result<(), Bo
     };
     let start_gen = start_gen.parse::<u8>()?;
     let end_gen = end_gen.parse::<u8>()?;
-    let pokemon = pokemon_db
+    // Filter by generation
+    let mut pokemon = pokemon_db
         .iter()
         .filter(|p| start_gen <= p.gen && end_gen >= p.gen)
         .collect::<Vec<_>>();
+
+    // Optional filters
+    if random.no_mega {
+        pokemon = pokemon
+            .iter()
+            .copied()
+            .filter(|p| !["mega", "mega-x", "mega-y"].contains(&p.form.as_str()))
+            .collect::<Vec<_>>();
+    }
+    if random.no_gmax {
+        pokemon = pokemon
+            .iter()
+            .copied()
+            .filter(|p| p.form != "gmax")
+            .collect::<Vec<_>>();
+    }
+    if random.no_regional {
+        pokemon = pokemon
+            .iter()
+            .copied()
+            .filter(|p| !["alola", "galar", "hisui"].contains(&p.form.as_str()))
+            .collect::<Vec<_>>();
+    }
+
     let pokemon = pokemon.choose(&mut rand::thread_rng()).unwrap();
     let shiny = rand::thread_rng().gen_bool(SHINY_RATE);
     show_pokemon_by_name(

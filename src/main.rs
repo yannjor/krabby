@@ -1,10 +1,18 @@
+mod pokemon;
+
+use pokemon::*;
+
 use clap::{Args, Parser, Subcommand};
+use rand::seq::SliceRandom;
+use rand::Rng;
 
 use std::error::Error;
 use std::fs::read_to_string;
 
 const POKEART_REGULAR_DIR: &str = "./colorscripts/regular";
 const POKEART_SHINY_DIR: &str = "./colorscripts/shiny";
+const SHINY_RATE: f64 = 1.0 / 128.0;
+const LANG: &str = "en";
 
 /// CLI utility to print out unicode image of a pokemon in your shell
 #[derive(Parser, Debug)]
@@ -46,39 +54,79 @@ struct Name {
 #[derive(Debug, Args)]
 struct Random {
     /// Generation number, range (1-8), or list of generations (1,3,6)
-    generations: Option<String>,
+    #[clap(default_value = "1-8")]
+    generations: String,
+
+    /// Do not display pokemon name
+    #[clap(short, long)]
+    title: bool,
 }
 
-fn list_pokemon_names() -> Result<(), Box<dyn Error>> {
-    let list = read_to_string("./nameslist.txt")?;
-    println!("{list}");
-    Ok(())
+fn list_pokemon_names(pokemon_db: &[Pokemon]) {
+    pokemon_db.iter().for_each(|p| println!("{}", p.slug));
 }
 
-fn show_pokemon_by_name(name: &Name) -> Result<(), Box<dyn Error>> {
-    let art_path = if name.shiny {
-        format!("{}/{}.txt", POKEART_SHINY_DIR, name.name)
+fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon]) -> Result<(), Box<dyn Error>> {
+    if let Some(pokemon) = pokemon_db.iter().find(|p| p.slug == name.name) {
+        let art_path = if name.shiny {
+            format!("{}/{}.txt", POKEART_SHINY_DIR, name.name)
+        } else {
+            format!("{}/{}.txt", POKEART_REGULAR_DIR, name.name)
+        };
+        let art = read_to_string(art_path)?;
+        if name.title {
+            println!(
+                "{}",
+                pokemon
+                    .name
+                    .get(LANG)
+                    .unwrap_or_else(|| panic!("Invalid language '{LANG}'"))
+            );
+        }
+        println!("{art}");
     } else {
-        format!("{}/{}.txt", POKEART_REGULAR_DIR, name.name)
-    };
-    let art = read_to_string(art_path)?;
-    if name.title {
-        println!("{}", name.name);
+        eprintln!("Invalid pokemon '{}'", name.name);
     }
-    println!("{art}");
     Ok(())
 }
 
-fn show_random_pokemon(random: &Random) -> Result<(), Box<dyn Error>> {
+fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon]) -> Result<(), Box<dyn Error>> {
+    let (start_gen, end_gen) = match random.generations.split_once('-') {
+        Some(gens) => gens,
+        None => {
+            let gen_list = random.generations.split(',').collect::<Vec<_>>();
+            let gen = gen_list
+                .choose(&mut rand::thread_rng())
+                .expect("Invalid generation");
+            (*gen, *gen)
+        }
+    };
+    let start_gen = start_gen.parse::<u8>()?;
+    let end_gen = end_gen.parse::<u8>()?;
+    let pokemon = pokemon_db
+        .iter()
+        .filter(|p| start_gen <= p.gen && end_gen >= p.gen)
+        .collect::<Vec<_>>();
+    let pokemon = pokemon.choose(&mut rand::thread_rng()).unwrap();
+    let shiny = rand::thread_rng().gen_bool(SHINY_RATE);
+    show_pokemon_by_name(
+        &Name {
+            name: pokemon.slug.clone(),
+            shiny,
+            title: random.title,
+        },
+        pokemon_db,
+    )?;
     Ok(())
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
+    let pokemon = load_pokemon_db()?;
     let args = Cli::parse();
     match args.command {
-        Commands::List => list_pokemon_names()?,
-        Commands::Name(name) => show_pokemon_by_name(&name)?,
-        Commands::Random(random) => show_random_pokemon(&random)?,
+        Commands::List => list_pokemon_names(&pokemon),
+        Commands::Name(name) => show_pokemon_by_name(&name, &pokemon)?,
+        Commands::Random(random) => show_random_pokemon(&random, &pokemon)?,
     }
     Ok(())
 }

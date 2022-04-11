@@ -1,18 +1,18 @@
+mod config;
 mod pokemon;
 
+use config::Config;
 use pokemon::*;
 
 use clap::{Args, Parser, Subcommand};
 use rand::seq::SliceRandom;
 use rand::Rng;
 
-use std::error::Error;
-use std::fs::read_to_string;
+use std::fs;
+use std::process;
 
 const POKEART_REGULAR_DIR: &str = "./colorscripts/regular";
 const POKEART_SHINY_DIR: &str = "./colorscripts/shiny";
-const SHINY_RATE: f64 = 1.0 / 128.0;
-const LANG: &str = "en";
 
 /// CLI utility to print out unicode image of a pokemon in your shell
 #[derive(Parser, Debug)]
@@ -78,43 +78,47 @@ fn list_pokemon_names(pokemon_db: &[Pokemon]) {
     pokemon_db.iter().for_each(|p| println!("{}", p.slug));
 }
 
-fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon]) -> Result<(), Box<dyn Error>> {
+fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
     if let Some(pokemon) = pokemon_db.iter().find(|p| p.slug == name.name) {
         let art_path = if name.shiny {
             format!("{}/{}.txt", POKEART_SHINY_DIR, name.name)
         } else {
             format!("{}/{}.txt", POKEART_REGULAR_DIR, name.name)
         };
-        let art = read_to_string(art_path)?;
+        let art = fs::read_to_string(art_path)
+            .unwrap_or_else(|_| panic!("Could not read pokemon art of '{}'", name.name));
         if !name.no_title {
             println!(
                 "{}",
                 pokemon
                     .name
-                    .get(LANG)
-                    .unwrap_or_else(|| panic!("Invalid language '{LANG}'"))
+                    .get(&config.language)
+                    .unwrap_or_else(|| panic!("Invalid language '{}'", config.language))
             );
         }
         println!("{art}");
     } else {
         eprintln!("Invalid pokemon '{}'", name.name);
+        process::exit(1);
     }
-    Ok(())
 }
 
-fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon]) -> Result<(), Box<dyn Error>> {
+fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon], config: &Config) {
     let (start_gen, end_gen) = match random.generations.split_once('-') {
         Some(gens) => gens,
         None => {
             let gen_list = random.generations.split(',').collect::<Vec<_>>();
-            let gen = gen_list
-                .choose(&mut rand::thread_rng())
-                .expect("Invalid generation");
+            let gen = gen_list.choose(&mut rand::thread_rng()).unwrap();
             (*gen, *gen)
         }
     };
-    let start_gen = start_gen.parse::<u8>()?;
-    let end_gen = end_gen.parse::<u8>()?;
+    let start_gen = start_gen
+        .parse::<u8>()
+        .unwrap_or_else(|_| panic!("Failed to parse generation '{start_gen}'"));
+    let end_gen = end_gen
+        .parse::<u8>()
+        .unwrap_or_else(|_| panic!("Failed to parse generation '{start_gen}'"));
+
     // Filter by generation
     let mut pokemon = pokemon_db
         .iter()
@@ -144,8 +148,10 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon]) -> Result<(), Bo
             .collect::<Vec<_>>();
     }
 
-    let pokemon = pokemon.choose(&mut rand::thread_rng()).unwrap();
-    let shiny = rand::thread_rng().gen_bool(SHINY_RATE);
+    let pokemon = pokemon
+        .choose(&mut rand::thread_rng())
+        .expect("Generation must be between 1 and 8");
+    let shiny = rand::thread_rng().gen_bool(config.shiny_rate);
     show_pokemon_by_name(
         &Name {
             name: pokemon.slug.clone(),
@@ -153,17 +159,29 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon]) -> Result<(), Bo
             no_title: random.no_title,
         },
         pokemon_db,
-    )?;
-    Ok(())
+        config,
+    );
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let pokemon = load_pokemon_db()?;
+fn main() {
+    let config = match Config::load() {
+        Ok(c) => c,
+        Err(e) => {
+            eprintln!("Configuration error: {e}");
+            std::process::exit(1)
+        }
+    };
+    let pokemon = match load_pokemon_db() {
+        Ok(p) => p,
+        Err(e) => {
+            eprintln!("Failed to load pokemon db: {e}");
+            std::process::exit(1)
+        }
+    };
     let args = Cli::parse();
     match args.command {
         Commands::List => list_pokemon_names(&pokemon),
-        Commands::Name(name) => show_pokemon_by_name(&name, &pokemon)?,
-        Commands::Random(random) => show_random_pokemon(&random, &pokemon)?,
+        Commands::Name(name) => show_pokemon_by_name(&name, &pokemon, &config),
+        Commands::Random(random) => show_random_pokemon(&random, &pokemon, &config),
     }
-    Ok(())
 }

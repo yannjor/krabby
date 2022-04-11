@@ -46,9 +46,9 @@ struct Name {
     #[clap(short, long)]
     shiny: bool,
 
-    /// Display pokemon name
-    #[clap(short, long)]
-    title: bool,
+    /// Do not display pokemon name
+    #[clap(long)]
+    no_title: bool,
 }
 
 #[derive(Debug, Args)]
@@ -57,9 +57,9 @@ struct Random {
     #[clap(default_value = "1-8")]
     generations: String,
 
-    /// Display pokemon name
-    #[clap(short, long)]
-    title: bool,
+    /// Do not display pokemon name
+    #[clap(long)]
+    no_title: bool,
 
     /// Do not show mega pokemon
     #[clap(long)]
@@ -86,7 +86,7 @@ fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon]) -> Result<(), Box<d
             format!("{}/{}.txt", POKEART_REGULAR_DIR, name.name)
         };
         let art = read_to_string(art_path)?;
-        if name.title {
+        if !name.no_title {
             println!(
                 "{}",
                 pokemon
@@ -150,7 +150,7 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon]) -> Result<(), Bo
         &Name {
             name: pokemon.slug.clone(),
             shiny,
-            title: random.title,
+            no_title: random.no_title,
         },
         pokemon_db,
     )?;

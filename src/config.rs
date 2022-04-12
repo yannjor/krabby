@@ -21,10 +21,16 @@ pub struct Config {
 
 impl Default for Config {
     fn default() -> Self {
-        let current_dir = env::current_dir().expect("Could not read current directory");
-        let program_dir = current_dir
+        // Should be safe to unwrap here, otherwise something is seriously wrong
+        let bin_path = env::current_exe().unwrap();
+        let mut program_dir = bin_path.parent().unwrap();
+        while !program_dir.ends_with(BINARY_NAME) {
+            program_dir = program_dir.parent().unwrap();
+        }
+        let program_dir = program_dir
             .to_str()
             .expect("Could not convert current directory path to unicode");
+
         Self {
             language: "en".to_string(),
             shiny_rate: 1.0 / 128.0,

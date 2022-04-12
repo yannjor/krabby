@@ -23,6 +23,7 @@ impl Default for Config {
     fn default() -> Self {
         // Should be safe to unwrap here, otherwise something is seriously wrong
         let bin_path = env::current_exe().unwrap();
+        let bin_path = fs::canonicalize(bin_path).unwrap();
         let mut program_dir = bin_path.parent().unwrap();
         while !program_dir.ends_with(BINARY_NAME) {
             program_dir = program_dir.parent().unwrap();

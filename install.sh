@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # Install script for krabby
 
 INSTALL_DIR="/usr/local/opt"

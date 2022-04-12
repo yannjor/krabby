@@ -12,7 +12,7 @@ use std::fs;
 use std::path::Path;
 use std::process;
 
-/// CLI utility to print out unicode image of a pokemon in your shell
+/// Print pokemon sprites in your terminal
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
 struct Cli {

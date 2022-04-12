@@ -26,7 +26,13 @@ To build krabby, you will need Rust. Installation instructions can be found [her
 
 ### Arch Linux (and derivatives)
 
-Download the PKGBUILD file from the repository, then run
+From the AUR using your favorite AUR helper
+
+```
+yay -S krabby-git
+```
+
+Or alternatively you can manually download the PKGBUILD file from the repository, then run
 ```
 makepkg -si
 ```

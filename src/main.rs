@@ -9,10 +9,8 @@ use rand::seq::SliceRandom;
 use rand::Rng;
 
 use std::fs;
+use std::path::Path;
 use std::process;
-
-const POKEART_REGULAR_DIR: &str = "./colorscripts/regular";
-const POKEART_SHINY_DIR: &str = "./colorscripts/shiny";
 
 /// CLI utility to print out unicode image of a pokemon in your shell
 #[derive(Parser, Debug)]
@@ -81,10 +79,17 @@ fn list_pokemon_names(pokemon_db: &[Pokemon]) {
 fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
     if let Some(pokemon) = pokemon_db.iter().find(|p| p.slug == name.name) {
         let art_path = if name.shiny {
-            format!("{}/{}.txt", POKEART_SHINY_DIR, name.name)
+            format!(
+                "{}/colorscripts/shiny/{}.txt",
+                config.program_dir, name.name
+            )
         } else {
-            format!("{}/{}.txt", POKEART_REGULAR_DIR, name.name)
+            format!(
+                "{}/colorscripts/regular/{}.txt",
+                config.program_dir, name.name
+            )
         };
+        let art_path = Path::new(&art_path);
         let art = fs::read_to_string(art_path)
             .unwrap_or_else(|_| panic!("Could not read pokemon art of '{}'", name.name));
         if !name.no_title {
@@ -171,7 +176,7 @@ fn main() {
             std::process::exit(1)
         }
     };
-    let pokemon = match load_pokemon_db() {
+    let pokemon = match load_pokemon_db(&config) {
         Ok(p) => p,
         Err(e) => {
             eprintln!("Failed to load pokemon db: {e}");

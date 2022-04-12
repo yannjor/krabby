@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 
+use std::env;
 use std::fs;
 use std::io::ErrorKind::NotFound;
 
@@ -13,13 +14,21 @@ pub struct Config {
     pub language: String,
     /// The probability to display a shiny pokemon with the random command
     pub shiny_rate: f64,
+
+    #[serde(skip)]
+    pub program_dir: String,
 }
 
 impl Default for Config {
     fn default() -> Self {
+        let current_dir = env::current_dir().expect("Could not read current directory");
+        let program_dir = current_dir
+            .to_str()
+            .expect("Could not convert current directory path to unicode");
         Self {
             language: "en".to_string(),
             shiny_rate: 1.0 / 128.0,
+            program_dir: program_dir.to_string(),
         }
     }
 }

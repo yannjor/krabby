@@ -2,7 +2,14 @@
 name = "krabby"
 version = "0.1.0"
 authors = ["Yann Jorelle <yannjorelle@protonmail.com>"]
+description = "Print pokemon sprites in your terminal"
+repository = "https://github.com/yannjor/krabby"
+homepage = "https://github.com/yannjor/krabby"
 edition = "2021"
+readme = "README.md"
+license = "GPL-3.0"
+keywords = ["pokemon", "terminal", "cli"]
+categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

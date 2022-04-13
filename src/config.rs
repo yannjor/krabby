@@ -26,11 +26,13 @@ impl Default for Config {
         let bin_path = fs::canonicalize(bin_path).unwrap();
         let mut program_dir = bin_path.parent().unwrap();
         while !program_dir.ends_with(BINARY_NAME) {
-            program_dir = program_dir.parent().unwrap();
+            program_dir = program_dir
+                .parent()
+                .expect("Could not find program directory");
         }
         let program_dir = program_dir
             .to_str()
-            .expect("Could not convert current directory path to unicode");
+            .expect("Could not convert program directory path to unicode");
 
         Self {
             language: "en".to_string(),

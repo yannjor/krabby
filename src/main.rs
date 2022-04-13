@@ -77,34 +77,41 @@ fn list_pokemon_names(pokemon_db: &[Pokemon]) {
 }
 
 fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
-    if let Some(pokemon) = pokemon_db.iter().find(|p| p.slug == name.name) {
-        let art_path = if name.shiny {
-            format!(
-                "{}/colorscripts/shiny/{}.txt",
-                config.program_dir, name.name
-            )
-        } else {
-            format!(
-                "{}/colorscripts/regular/{}.txt",
-                config.program_dir, name.name
-            )
-        };
-        let art_path = Path::new(&art_path);
-        let art = fs::read_to_string(art_path)
-            .unwrap_or_else(|_| panic!("Could not read pokemon art of '{}'", name.name));
-        if !name.no_title {
-            println!(
-                "{}",
-                pokemon
-                    .name
-                    .get(&config.language)
-                    .unwrap_or_else(|| panic!("Invalid language '{}'", config.language))
-            );
+    match pokemon_db.iter().find(|p| p.slug == name.name) {
+        Some(pokemon) => {
+            let art_path = if name.shiny {
+                format!(
+                    "{}/colorscripts/shiny/{}.txt",
+                    config.program_dir, name.name
+                )
+            } else {
+                format!(
+                    "{}/colorscripts/regular/{}.txt",
+                    config.program_dir, name.name
+                )
+            };
+            let art_path = Path::new(&art_path);
+            let art = fs::read_to_string(art_path)
+                .unwrap_or_else(|_| panic!("Could not read pokemon art of '{}'", name.name));
+            if !name.no_title {
+                print!(
+                    "{}",
+                    pokemon
+                        .name
+                        .get(&config.language)
+                        .unwrap_or_else(|| panic!("Invalid language '{}'", config.language))
+                );
+                match pokemon.form.as_str() {
+                    "normal" => println!(),
+                    other => println!(" ({other})"),
+                }
+            }
+            println!("{art}");
         }
-        println!("{art}");
-    } else {
-        eprintln!("Invalid pokemon '{}'", name.name);
-        process::exit(1);
+        None => {
+            eprintln!("Invalid pokemon '{}'", name.name);
+            process::exit(1);
+        }
     }
 }
 
@@ -122,7 +129,7 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon], config: &Config)
         .unwrap_or_else(|_| panic!("Failed to parse generation '{start_gen}'"));
     let end_gen = end_gen
         .parse::<u8>()
-        .unwrap_or_else(|_| panic!("Failed to parse generation '{start_gen}'"));
+        .unwrap_or_else(|_| panic!("Failed to parse generation '{end_gen}'"));
 
     // Filter by generation
     let mut pokemon = pokemon_db

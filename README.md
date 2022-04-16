@@ -18,6 +18,7 @@ Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https:
 - Pokemon from every generation, including shinies, megas, gigantamax, and regional variants
 - Print random pokemon (with filters for generations and different forms)
 - Print pokemon by name
+- Print pokedex entry together with the sprite
 - Configuration file, right now only for language and shiny rate
 
 ## Installation
@@ -80,6 +81,10 @@ Print a specific shiny pokemon
 ```
 krabby name spheal -s
 ```
+Print a specific pokemon together with its pokedex entry
+```
+krabby name mudkip -i
+```
 Print a random pokemon (gens 1-8)
 ```
 krabby random
@@ -103,10 +108,9 @@ When the program is run, a TOML config file will automatically be created in the
 directory (usually `~/.config`) under `krabby/config.toml` if it doesn't exist already. 
 
 ```toml
-# The language to use when printing the pokemon's name. Possible options include
-# en (English), fr (French), de (German), ja (Japanese), ja_ro (Japanese with
-# roman characters), zh_hans (Chinese with simplified characters), zh_hant (Chinese
-# with traditional characters)
+# The language to use when printing the pokemon's name and/or description.
+# Possible options include en (English), fr (French), de (German), ja (Japanese),
+# zh_hans (Chinese with simplified characters), zh_hant (Chinese with traditional characters)
 language = 'en'
 
 # The probability to show a shiny pokemon when using the random command

@@ -14,6 +14,7 @@ pub struct Pokemon {
     pub gen: u8,
     pub form: String,
     pub name: HashMap<String, String>,
+    pub desc: HashMap<String, String>,
 }
 
 pub fn load_pokemon_db(config: &Config) -> Result<Vec<Pokemon>, Box<dyn Error>> {

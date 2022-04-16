@@ -44,6 +44,10 @@ struct Name {
     #[clap(short, long)]
     shiny: bool,
 
+    /// Print pokedex entry (if it exists)
+    #[clap(short, long)]
+    info: bool,
+
     /// Do not display pokemon name
     #[clap(long)]
     no_title: bool,
@@ -54,6 +58,10 @@ struct Random {
     /// Generation number, range (1-8), or list of generations (1,3,6)
     #[clap(default_value = "1-8")]
     generations: String,
+
+    /// Print pokedex entry (if it exists)
+    #[clap(short, long)]
+    info: bool,
 
     /// Do not display pokemon name
     #[clap(long)]
@@ -104,6 +112,12 @@ fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
                 match pokemon.form.as_str() {
                     "normal" => println!(),
                     other => println!(" ({other})"),
+                }
+            }
+            if name.info {
+                match pokemon.desc.get(&config.language) {
+                    Some(d) => println!("{d}"),
+                    None => (),
                 }
             }
             println!("{art}");
@@ -168,6 +182,7 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon], config: &Config)
         &Name {
             name: pokemon.slug.clone(),
             shiny,
+            info: random.info,
             no_title: random.no_title,
         },
         pokemon_db,

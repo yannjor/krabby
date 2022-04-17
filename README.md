@@ -1,5 +1,8 @@
 # krabby
 
+![Crates.io version](https://img.shields.io/crates/v/krabby)
+![AUR version](https://img.shields.io/aur/version/krabby-bin)
+
 Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts) with some extra features. It is around 7x faster than the original shell script ⚡.
 
 ![](https://i.imgur.com/MVzaS3k.png)

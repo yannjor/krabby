@@ -17,6 +17,6 @@ pub struct Pokemon {
 
 pub fn load_pokemon(pokemon_db: &EmbeddedFile) -> Result<Vec<Pokemon>, Box<dyn Error>> {
     let pokemon_json_str = str::from_utf8(&pokemon_db.data)?;
-    let pokemon: Vec<Pokemon> = serde_json::from_str(&pokemon_json_str)?;
+    let pokemon: Vec<Pokemon> = serde_json::from_str(pokemon_json_str)?;
     Ok(pokemon)
 }

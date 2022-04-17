@@ -14,30 +14,13 @@ pub struct Config {
     pub language: String,
     /// The probability to display a shiny pokemon with the random command
     pub shiny_rate: f64,
-
-    #[serde(skip)]
-    pub program_dir: String,
 }
 
 impl Default for Config {
     fn default() -> Self {
-        // Should be safe to unwrap here, otherwise something is seriously wrong
-        let bin_path = env::current_exe().unwrap();
-        let bin_path = fs::canonicalize(bin_path).unwrap();
-        let mut program_dir = bin_path.parent().unwrap();
-        while !program_dir.ends_with(BINARY_NAME) {
-            program_dir = program_dir
-                .parent()
-                .expect("Could not find program directory");
-        }
-        let program_dir = program_dir
-            .to_str()
-            .expect("Could not convert program directory path to unicode");
-
         Self {
             language: "en".to_string(),
             shiny_rate: 1.0 / 128.0,
-            program_dir: program_dir.to_string(),
         }
     }
 }

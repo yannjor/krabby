@@ -7,10 +7,10 @@ use pokemon::*;
 use clap::{Args, Parser, Subcommand};
 use rand::seq::SliceRandom;
 use rand::Rng;
+use rust_embed::RustEmbed;
 
-use std::fs;
-use std::path::Path;
 use std::process;
+use std::str;
 
 /// Print pokemon sprites in your terminal
 #[derive(Parser, Debug)]
@@ -80,6 +80,10 @@ struct Random {
     no_regional: bool,
 }
 
+#[derive(RustEmbed)]
+#[folder = "assets/"]
+struct Asset;
+
 fn list_pokemon_names(pokemon_db: &[Pokemon]) {
     pokemon_db.iter().for_each(|p| println!("{}", p.slug));
 }
@@ -88,19 +92,14 @@ fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
     match pokemon_db.iter().find(|p| p.slug == name.name) {
         Some(pokemon) => {
             let art_path = if name.shiny {
-                format!(
-                    "{}/colorscripts/shiny/{}.txt",
-                    config.program_dir, name.name
-                )
+                format!("colorscripts/shiny/{}.txt", name.name)
             } else {
-                format!(
-                    "{}/colorscripts/regular/{}.txt",
-                    config.program_dir, name.name
-                )
+                format!("colorscripts/regular/{}.txt", name.name)
             };
-            let art_path = Path::new(&art_path);
-            let art = fs::read_to_string(art_path)
-                .unwrap_or_else(|_| panic!("Could not read pokemon art of '{}'", name.name));
+            let art = Asset::get(&art_path)
+                .unwrap_or_else(|| panic!("Could not read pokemon art of '{}'", name.name))
+                .data;
+            let art = str::from_utf8(&art).expect("Invalid utf-8 in pokemon art");
             if !name.no_title {
                 print!(
                     "{}",
@@ -198,7 +197,8 @@ fn main() {
             std::process::exit(1)
         }
     };
-    let pokemon = match load_pokemon_db(&config) {
+    let pokemon_db = Asset::get("pokemon.json").expect("Could not read pokemond db file");
+    let pokemon = match load_pokemon(&pokemon_db) {
         Ok(p) => p,
         Err(e) => {
             eprintln!("Failed to load pokemon db: {e}");

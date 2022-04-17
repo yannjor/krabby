@@ -7,8 +7,8 @@ Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https:
 ## Table of contents
 * [Features](#features)
 * [Installation](#installation)
-  * [Arch Linux (and derivatives)](#arch-linux-and-derivatives)
-  * [On other distros and MacOS](#on-other-distros-and-macos)
+  * [Arch Linux x86_64 (and derivatives)](#arch-linux-and-derivatives)
+  * [Building from source (other distros and MacOS)](#on-other-distros-and-macos)
 * [Usage](#usage)
   * [Examples](#examples)
 * [Configuration](#configuration)
@@ -23,14 +23,12 @@ Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https:
 
 ## Installation
 
-To build krabby, you will need Rust. Installation instructions can be found [here](https://www.rust-lang.org/learn/get-started).
-
-### Arch Linux (and derivatives)
+### Arch Linux x86_64 (and derivatives)
 
 From the AUR using your favorite AUR helper
 
 ```
-yay -S krabby-git
+yay -S krabby-bin
 ```
 
 Or alternatively you can manually download the PKGBUILD file from the repository, then run
@@ -38,7 +36,10 @@ Or alternatively you can manually download the PKGBUILD file from the repository
 makepkg -si
 ```
 
-### On other distros and MacOS
+### Building from source (other distros and MacOS)
+
+To build krabby, you will need Rust. Installation instructions can be found [here](https://www.rust-lang.org/learn/get-started).
+
 Clone the respository, then run
 ```
 sudo ./install.sh

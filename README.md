@@ -7,8 +7,8 @@ Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https:
 ## Table of contents
 * [Features](#features)
 * [Installation](#installation)
-  * [Arch Linux x86_64 (and derivatives)](#arch-linux-and-derivatives)
-  * [Building from source (other distros and MacOS)](#on-other-distros-and-macos)
+  * [Arch Linux x86_64 (and derivatives)](#arch-linux-x86_64-and-derivatives)
+  * [Installing from source (other distros and MacOS)](#installing-from-source-other-distros-and-macos)
 * [Usage](#usage)
   * [Examples](#examples)
 * [Configuration](#configuration)
@@ -36,13 +36,17 @@ Or alternatively you can manually download the PKGBUILD file from the repository
 makepkg -si
 ```
 
-### Building from source (other distros and MacOS)
+### Installing from source (other distros and MacOS)
 
-To build krabby, you will need Rust. Installation instructions can be found [here](https://www.rust-lang.org/learn/get-started).
+To install krabby from source, you will need Rust. Installation instructions can be found [here](https://www.rust-lang.org/learn/get-started).
 
-Clone the respository, then run
+Now using cargo, run
 ```
-sudo ./install.sh
+cargo install krabby
+```
+Make sure you have `.cargo/bin` added to your shell `PATH`. This can be done by adding the following to your `.profile`, `.bash_profile` or `.zprofile`
+```sh
+export PATH="$PATH:$HOME/.cargo/bin"
 ```
 
 ## Usage

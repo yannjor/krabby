@@ -84,11 +84,11 @@ struct Random {
 #[folder = "assets/"]
 struct Asset;
 
-fn list_pokemon_names(pokemon_db: &[Pokemon]) {
+fn list_pokemon_names(pokemon_db: Vec<Pokemon>) {
     pokemon_db.iter().for_each(|p| println!("{}", p.slug));
 }
 
-fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
+fn show_pokemon_by_name(name: &Name, pokemon_db: Vec<Pokemon>, config: &Config) {
     match pokemon_db.iter().find(|p| p.slug == name.name) {
         Some(pokemon) => {
             let art_path = if name.shiny {
@@ -128,7 +128,7 @@ fn show_pokemon_by_name(name: &Name, pokemon_db: &[Pokemon], config: &Config) {
     }
 }
 
-fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon], config: &Config) {
+fn show_random_pokemon(random: &Random, pokemon_db: Vec<Pokemon>, config: &Config) {
     let (start_gen, end_gen) = match random.generations.split_once('-') {
         Some(gens) => gens,
         None => {
@@ -152,25 +152,13 @@ fn show_random_pokemon(random: &Random, pokemon_db: &[Pokemon], config: &Config)
 
     // Optional filters
     if random.no_mega {
-        pokemon = pokemon
-            .iter()
-            .copied()
-            .filter(|p| !["mega", "mega-x", "mega-y"].contains(&p.form.as_str()))
-            .collect::<Vec<_>>();
+        pokemon.retain(|p| !["mega", "mega-x", "mega-y"].contains(&p.form.as_str()));
     }
     if random.no_gmax {
-        pokemon = pokemon
-            .iter()
-            .copied()
-            .filter(|p| p.form != "gmax")
-            .collect::<Vec<_>>();
+        pokemon.retain(|p| p.form != "gmax");
     }
     if random.no_regional {
-        pokemon = pokemon
-            .iter()
-            .copied()
-            .filter(|p| !["alola", "galar", "hisui"].contains(&p.form.as_str()))
-            .collect::<Vec<_>>();
+        pokemon.retain(|p| !["alola", "galar", "hisui"].contains(&p.form.as_str()));
     }
 
     let pokemon = pokemon
@@ -207,8 +195,8 @@ fn main() {
     };
     let args = Cli::parse();
     match args.command {
-        Commands::List => list_pokemon_names(&pokemon),
-        Commands::Name(name) => show_pokemon_by_name(&name, &pokemon, &config),
-        Commands::Random(random) => show_random_pokemon(&random, &pokemon, &config),
+        Commands::List => list_pokemon_names(pokemon),
+        Commands::Name(name) => show_pokemon_by_name(&name, pokemon, &config),
+        Commands::Random(random) => show_random_pokemon(&random, pokemon, &config),
     }
 }

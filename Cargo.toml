@@ -20,6 +20,7 @@ serde = { version = "1.0.136", features = ["derive"]}
 serde_json = "1.0.79"
 rand = "0.8.5"
 rust-embed = "6.4.0"
+thiserror = "1.0.30"
 # Config
 dirs = "4.0.0"
 toml = "0.5.8"

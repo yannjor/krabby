@@ -4,6 +4,8 @@ use std::env;
 use std::fs;
 use std::io::ErrorKind::NotFound;
 
+use crate::error::Error;
+
 const BINARY_NAME: &str = env!("CARGO_PKG_NAME");
 
 #[derive(Serialize, Deserialize)]
@@ -26,10 +28,14 @@ impl Default for Config {
 }
 
 impl Config {
-    pub fn load() -> Result<Self, &'static str> {
+    pub fn load() -> Result<Self, Error> {
         let config_dir = match dirs::config_dir() {
             Some(dir) => dir.join(BINARY_NAME),
-            None => return Err("Failed to get config directory"),
+            None => {
+                return Err(Error::Configuration(
+                    "Failed to get config directory".to_string(),
+                ))
+            }
         };
 
         let config_file = config_dir.join("config.toml");
@@ -46,7 +52,11 @@ impl Config {
                 fs::write(&config_file, toml).expect("Failed to write config file");
                 config
             }
-            Err(_) => return Err("Failed to load configuration file"),
+            Err(_) => {
+                return Err(Error::Configuration(
+                    "Failed to load configuration file".to_string(),
+                ))
+            }
         };
 
         Ok(config)

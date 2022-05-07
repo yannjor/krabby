@@ -3,7 +3,8 @@
 ![Crates.io version](https://img.shields.io/crates/v/krabby)
 ![AUR version](https://img.shields.io/aur/version/krabby-bin)
 
-Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts) with some extra features. It is around 7x faster than the original shell script ⚡.
+Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts)
+with some extra features.
 
 ![](https://i.imgur.com/MVzaS3k.png)
 
@@ -15,6 +16,7 @@ Krabby is mostly a Rust rewrite of phoney badger's [pokemon-colorscripts](https:
 * [Usage](#usage)
   * [Examples](#examples)
 * [Configuration](#configuration)
+* [Credits](#credits)
 * [Similar projects](#similar-projects)
 
 ## Features
@@ -111,7 +113,6 @@ krabby random --no-mega --no-gmax --no-regional
 ```
 
 ## Configuration
-
 When the program is run, a TOML config file will automatically be created in the user's config
 directory (usually `~/.config`) under `krabby/config.toml` if it doesn't exist already. 
 
@@ -124,6 +125,10 @@ language = 'en'
 # The probability to show a shiny pokemon when using the random command
 shiny_rate = 0.0078125
 ```
+
+## Credits
+The pokemon sprites for krabby were generated using sprites from [PokéSprite](https://msikma.github.io/pokesprite/)
+and converted to unicode using Phoney Badger's [pokemon-generator-scripts](https://gitlab.com/phoneybadger/pokemon-generator-scripts).
 
 ## Similar projects
 - [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts)

@@ -97,9 +97,9 @@ fn show_pokemon_by_name(
     match pokemon_db.iter().find(|p| p.slug == name.name) {
         Some(pokemon) => {
             let art_path = if name.shiny {
-                format!("colorscripts/shiny/{}.txt", name.name)
+                format!("colorscripts/shiny/{}", name.name)
             } else {
-                format!("colorscripts/regular/{}.txt", name.name)
+                format!("colorscripts/regular/{}", name.name)
             };
             let art = Asset::get(&art_path)
                 .unwrap_or_else(|| panic!("Could not read pokemon art of '{}'", name.name))
@@ -122,7 +122,7 @@ fn show_pokemon_by_name(
                     None => (),
                 }
             }
-            println!("{art}");
+            println!("\n{art}");
         }
         None => {
             return Err(Error::InvalidPokemon(name.name.clone()));

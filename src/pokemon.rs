@@ -11,9 +11,9 @@ pub struct Pokemon {
     pub idx: u32,
     pub slug: String,
     pub gen: u8,
-    pub form: String,
     pub name: HashMap<String, String>,
     pub desc: HashMap<String, String>,
+    pub forms: Vec<String>,
 }
 
 pub fn load_pokemon(pokemon_db: &EmbeddedFile) -> Result<Vec<Pokemon>, Error> {

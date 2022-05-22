@@ -41,6 +41,11 @@ struct Name {
     /// Name of the pokemon to show
     name: String,
 
+    /// Show an alternative form of the pokemon. Can be one of: mega, mega-x,
+    /// mega-y, gmax, alola, hisui, galar
+    #[clap(short, long, default_value = "regular")]
+    form: String,
+
     /// Show the shiny version of the pokemon instead
     #[clap(short, long)]
     shiny: bool,
@@ -96,23 +101,28 @@ fn show_pokemon_by_name(
 ) -> Result<(), Error> {
     match pokemon_db.iter().find(|p| p.slug == name.name) {
         Some(pokemon) => {
-            let art_path = if name.shiny {
-                format!("colorscripts/shiny/{}", name.name)
+            let slug = if name.form == "regular" {
+                name.name.clone()
             } else {
-                format!("colorscripts/regular/{}", name.name)
+                format!("{}-{}", name.name, name.form)
+            };
+            let art_path = if name.shiny {
+                format!("colorscripts/shiny/{}", slug)
+            } else {
+                format!("colorscripts/regular/{}", slug)
             };
             let art = Asset::get(&art_path)
-                .unwrap_or_else(|| panic!("Could not read pokemon art of '{}'", name.name))
+                .unwrap_or_else(|| panic!("Could not read pokemon art of '{}'", slug))
                 .data;
             let art = str::from_utf8(&art).expect("Invalid UTF-8 in pokemon art");
             if !name.no_title {
-                let name = match pokemon.name.get(&config.language) {
+                let pokemon_name = match pokemon.name.get(&config.language) {
                     Some(n) => n,
                     None => return Err(Error::InvalidLanguage(config.language.clone())),
                 };
-                print!("{name}");
-                match pokemon.form.as_str() {
-                    "normal" => println!(),
+                print!("{pokemon_name}");
+                match name.form.as_str() {
+                    "regular" => println!(),
                     other => println!(" ({other})"),
                 }
             }
@@ -153,31 +163,36 @@ fn show_random_pokemon(
     };
 
     // Filter by generation
-    let mut pokemon = pokemon_db
+    let pokemon = pokemon_db
         .iter()
         .filter(|p| start_gen <= p.gen && end_gen >= p.gen)
         .collect::<Vec<_>>();
-
-    // Optional filters
-    if random.no_mega {
-        pokemon.retain(|p| !["mega", "mega-x", "mega-y"].contains(&p.form.as_str()));
-    }
-    if random.no_gmax {
-        pokemon.retain(|p| p.form != "gmax");
-    }
-    if random.no_regional {
-        pokemon.retain(|p| !["alola", "galar", "hisui"].contains(&p.form.as_str()));
-    }
 
     let pokemon = match pokemon.choose(&mut rand::thread_rng()) {
         Some(p) => Ok(p),
         None => Err(Error::InvalidGeneration(random.generations.clone())),
     }?;
 
+    let mut forms = vec!["regular".to_string()];
+    forms.extend_from_slice(&pokemon.forms);
+    // Optional filters
+    if random.no_mega {
+        forms.retain(|f| !["mega", "mega-x", "mega-y"].contains(&f.as_str()));
+    }
+    if random.no_gmax {
+        forms.retain(|f| f.as_str() != "gmax");
+    }
+    if random.no_regional {
+        forms.retain(|f| !["alola", "galar", "hisui"].contains(&f.as_str()));
+    }
+    // forms will never be empty, so safe to unwrap
+    let form = forms.choose(&mut rand::thread_rng()).unwrap();
     let shiny = rand::thread_rng().gen_bool(config.shiny_rate);
+
     show_pokemon_by_name(
         &Name {
             name: pokemon.slug.clone(),
+            form: form.to_string(),
             shiny,
             info: random.info,
             no_title: random.no_title,

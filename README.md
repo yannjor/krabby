@@ -95,6 +95,10 @@ Print a specific pokemon together with its pokedex entry
 ```
 krabby name mudkip -i
 ```
+Print an alternative form of a pokemon
+```
+krabby name blastoise -f mega
+```
 Print a random pokemon (gens 1-8)
 ```
 krabby random

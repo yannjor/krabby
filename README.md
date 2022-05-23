@@ -43,6 +43,8 @@ Or alternatively you can manually download the PKGBUILD file from the repository
 makepkg -si
 ```
 
+There is also the development package [krabby-git](https://aur.archlinux.org/packages/krabby-git) that tracks the main branch.
+
 ### Ubuntu/Debian x86_64 (and derivatives)
 
 Download the latest `.deb` release. Then run (replacing v.v.v with the version number)

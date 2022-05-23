@@ -12,12 +12,14 @@ with some extra features.
 * [Features](#features)
 * [Installation](#installation)
   * [Arch Linux x86_64 (and derivatives)](#arch-linux-x86_64-and-derivatives)
-  * [Installing from source (other distros and MacOS)](#installing-from-source-other-distros-and-macos)
+  * [Ubuntu/Debian x86_64 (and derivatives)](#ubuntudebian-x86_64-and-derivatives)
+  * [Installing from source (other distros and MacOS/Windows)](#installing-from-source-other-distros-and-macoswindows)
 * [Usage](#usage)
   * [Examples](#examples)
 * [Configuration](#configuration)
 * [Credits](#credits)
 * [Similar projects](#similar-projects)
+
 
 ## Features
 - Pokemon from every generation, including shinies, megas, gigantamax, and regional variants
@@ -41,7 +43,14 @@ Or alternatively you can manually download the PKGBUILD file from the repository
 makepkg -si
 ```
 
-### Installing from source (other distros and MacOS)
+### Ubuntu/Debian x86_64 (and derivatives)
+
+Download the latest `.deb` release. Then run (replacing v.v.v with the version number)
+```
+dpkg -i krabby_v.v.v_amd64.deb
+```
+
+### Installing from source (other distros and MacOS/Windows)
 
 To install krabby from source, you will need Rust. Installation instructions can be found [here](https://www.rust-lang.org/learn/get-started).
 
@@ -119,6 +128,9 @@ krabby random --no-mega --no-gmax --no-regional
 ## Configuration
 When the program is run, a TOML config file will automatically be created in the user's config
 directory (usually `~/.config`) under `krabby/config.toml` if it doesn't exist already. 
+
+On MacOS the config will be in: `/Users/<username>/Library/Application Support/krabby`
+On Windows this will be: `C:\Users\<username>\AppData\Roaming\krabby`
 
 ```toml
 # The language to use when printing the pokemon's name and/or description.

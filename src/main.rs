@@ -69,6 +69,10 @@ struct Random {
     #[clap(short, long)]
     info: bool,
 
+    /// Show the shiny version of the pokemon instead
+    #[clap(short, long)]
+    shiny: bool,
+
     /// Do not display pokemon name
     #[clap(long)]
     no_title: bool,
@@ -187,7 +191,7 @@ fn show_random_pokemon(
     }
     // forms will never be empty, so safe to unwrap
     let form = forms.choose(&mut rand::thread_rng()).unwrap();
-    let shiny = rand::thread_rng().gen_bool(config.shiny_rate);
+    let shiny = rand::thread_rng().gen_bool(config.shiny_rate) || random.shiny;
 
     show_pokemon_by_name(
         &Name {

@@ -57,6 +57,10 @@ struct Name {
     /// Do not display pokemon name
     #[clap(long)]
     no_title: bool,
+
+    /// Left padding
+    #[clap(long, default_value = "0")]
+    padding_left: usize,
 }
 
 #[derive(Debug, Args)]
@@ -88,6 +92,10 @@ struct Random {
     /// Do not show regional pokemon
     #[clap(long)]
     no_regional: bool,
+
+    /// Left padding
+    #[clap(long, default_value = "0")]
+    padding_left: usize,
 }
 
 #[derive(RustEmbed)]
@@ -124,19 +132,22 @@ fn show_pokemon_by_name(
                     Some(n) => n,
                     None => return Err(Error::InvalidLanguage(config.language.clone())),
                 };
-                print!("{pokemon_name}");
+                print!("{: <1$}{pokemon_name}", "", name.padding_left);
                 match name.form.as_str() {
                     "regular" => println!(),
                     other => println!(" ({other})"),
                 }
             }
             if name.info {
-                match pokemon.desc.get(&config.language) {
-                    Some(d) => println!("{d}"),
-                    None => (),
+                if let Some(description) = pokemon.desc.get(&config.language) {
+                    description
+                        .lines()
+                        .for_each(|line| println!("{: <1$}{line}", "", name.padding_left))
                 }
             }
-            println!("\n{art}");
+            println!();
+            art.lines()
+                .for_each(|line| println!("{: <1$}{line}", "", name.padding_left))
         }
         None => {
             return Err(Error::InvalidPokemon(name.name.clone()));
@@ -200,6 +211,7 @@ fn show_random_pokemon(
             shiny,
             info: random.info,
             no_title: random.no_title,
+            padding_left: random.padding_left,
         },
         pokemon_db,
         config,

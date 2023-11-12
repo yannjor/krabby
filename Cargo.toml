@@ -1,6 +1,6 @@
 [package]
 name = "krabby"
-version = "0.1.7"
+version = "0.1.8"
 authors = ["Yann Jorelle <yann@yannjorelle.com>"]
 description = "Print pokemon sprites in your terminal"
 repository = "https://github.com/yannjor/krabby"

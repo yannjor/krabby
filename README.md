@@ -52,6 +52,18 @@ Download the latest `.deb` release. Then run (replacing v.v.v with the version n
 dpkg -i krabby_v.v.v_amd64.deb
 ```
 
+### Homebrew
+
+Add the tap:
+```
+brew tap yannjor/krabby
+```
+
+Install:
+```
+brew install krabby
+```
+
 ### Installing from source (other distros and MacOS/Windows)
 
 To install krabby from source, you will need Rust. Installation instructions can be found [here](https://www.rust-lang.org/learn/get-started).

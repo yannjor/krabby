@@ -30,7 +30,7 @@ enum Commands {
     /// flabebe type-null etc. Perhaps grep the output of list if in doubt.
     Name(Name),
     /// Show a random pokemon. This command can optionally be followed by a
-    /// generation number or range (1-8) to show random pokemon from a specific
+    /// generation number or range (1-9) to show random pokemon from a specific
     /// generation or range of generations. The generations can be provided as
     /// a continuous range (eg. 1-3) or as a list of generations (1,3,6)
     Random(Random),
@@ -42,7 +42,7 @@ struct Name {
     name: String,
 
     /// Show an alternative form of the pokemon. Can be one of: mega, mega-x,
-    /// mega-y, gmax, alola, hisui, galar
+    /// mega-y, gmax, alola, hisui, galar, paldea
     #[clap(short, long, default_value = "regular")]
     form: String,
 
@@ -65,8 +65,8 @@ struct Name {
 
 #[derive(Debug, Args)]
 struct Random {
-    /// Generation number, range (1-8), or list of generations (1,3,6)
-    #[clap(default_value = "1-8")]
+    /// Generation number, range (1-9), or list of generations (1,3,6)
+    #[clap(default_value = "1-9")]
     generations: String,
 
     /// Print pokedex entry (if it exists)
@@ -198,7 +198,7 @@ fn show_random_pokemon(
         forms.retain(|f| f.as_str() != "gmax");
     }
     if random.no_regional {
-        forms.retain(|f| !["alola", "galar", "hisui"].contains(&f.as_str()));
+        forms.retain(|f| !["alola", "galar", "hisui", "paldea"].contains(&f.as_str()));
     }
     // forms will never be empty, so safe to unwrap
     let form = forms.choose(&mut rand::thread_rng()).unwrap();

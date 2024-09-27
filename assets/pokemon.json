@@ -2813,7 +2813,7 @@
       "zh_hans": "\u6816\u606f\u5728\u4f3d\u52d2\u5c14\u7684\u80af\u6cf0\u7f57\n\u6027\u683c\u66b4\u8e81\uff0c\u51b3\u4e0d\u5141\u8bb8\n\u4eba\u7c7b\u9a91\u5728\u81ea\u5df1\u7684\u80cc\u4e0a\u3002",
       "zh_hant": "\u68f2\u606f\u5728\u4f3d\u52d2\u723e\u7684\u80af\u6cf0\u7f85\n\u6027\u683c\u66b4\u8e81\uff0c\u7d55\u4e0d\u6703\u5141\u8a31\n\u4eba\u985e\u9a0e\u5230\u81ea\u5df1\u7684\u80cc\u4e0a\u3002"
     },
-    "forms": []
+    "forms": ["paldea"]
   },
   {
     "idx": 129,
@@ -4231,7 +4231,7 @@
       "zh_hans": "\u4e3a\u4e86\u5728\u5730\u9762\u4e0a\u884c\u8d70\u65f6\n\u4e0d\u8ba9\u76ae\u80a4\u5e72\u71e5\uff0c\u4f1a\u7528\n\u6709\u6bd2\u7684\u7c98\u819c\u8986\u76d6\u8eab\u4f53\u3002",
       "zh_hant": "\u70ba\u4e86\u5728\u5730\u9762\u4e0a\u884c\u8d70\u6642\n\u4e0d\u8b93\u76ae\u819a\u4e7e\u71e5\uff0c\u6703\u7528\n\u6709\u6bd2\u7684\u9ecf\u819c\u8986\u84cb\u8eab\u9ad4\u3002"
     },
-    "forms": []
+    "forms": ["paldea"]
   },
   {
     "idx": 195,
@@ -19506,6 +19506,1791 @@
       "zh_hant": "\u7737\u6200\u96f2"
     },
     "desc": {},
+    "forms": []
+  },
+  {
+    "idx": 906,
+    "slug": "sprigatito",
+    "gen": 9,
+    "name": {
+      "ja": "\u30cb\u30e3\u30aa\u30cf",
+      "zh_hant": "\u65b0\u8449\u55b5",
+      "fr": "Poussacha",
+      "de": "Felori",
+      "en": "Sprigatito",
+      "zh_hans": "\u65b0\u53f6\u55b5"
+    },
+    "desc": {
+      "en": "The sweet scent its body gives off mesmerizes\nthose around it. The scent grows stronger when\nthis Pok\u00e9mon is in the sun."
+    },
+    "forms": []
+  },
+  {
+    "idx": 907,
+    "slug": "floragato",
+    "gen": 9,
+    "name": {
+      "ja": "\u30cb\u30e3\u30ed\u30fc\u30c6",
+      "zh_hant": "\u8482\u857e\u55b5",
+      "fr": "Matourgeon",
+      "de": "Feliospa",
+      "en": "Floragato",
+      "zh_hans": "\u8482\u857e\u55b5"
+    },
+    "desc": {
+      "en": "The hardness of Floragato\u2019s fur depends on the\nPok\u00e9mon\u2019s mood. When Floragato is prepared to\nbattle, its fur becomes pointed and needle sharp."
+    },
+    "forms": []
+  },
+  {
+    "idx": 908,
+    "slug": "meowscarada",
+    "gen": 9,
+    "name": {
+      "ja": "\u30de\u30b9\u30ab\u30fc\u30cb\u30e3",
+      "zh_hant": "\u9b54\u5e7b\u5047\u9762\u55b5",
+      "fr": "Miascarade",
+      "de": "Maskagato",
+      "en": "Meowscarada",
+      "zh_hans": "\u9b54\u5e7b\u5047\u9762\u55b5"
+    },
+    "desc": {
+      "en": "With skillful misdirection, it rigs foes with\npollen-packed flower bombs. Meowscarada sets off\nthe bombs before its foes realize what\u2019s going\non."
+    },
+    "forms": []
+  },
+  {
+    "idx": 909,
+    "slug": "fuecoco",
+    "gen": 9,
+    "name": {
+      "ja": "\u30db\u30b2\u30fc\u30bf",
+      "zh_hant": "\u5446\u706b\u9c77",
+      "fr": "Chochodile",
+      "de": "Krokel",
+      "en": "Fuecoco",
+      "zh_hans": "\u5446\u706b\u9cc4"
+    },
+    "desc": {
+      "en": "Its flame sac is small, so energy is always\nleaking out. This energy is released from the\ndent atop Fuecoco\u2019s head and flickers to and fro."
+    },
+    "forms": []
+  },
+  {
+    "idx": 910,
+    "slug": "crocalor",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a2\u30c1\u30b2\u30fc\u30bf",
+      "zh_hant": "\u7099\u71d9\u9c77",
+      "fr": "Crocogril",
+      "de": "Lokroko",
+      "en": "Crocalor",
+      "zh_hans": "\u7099\u70eb\u9cc4"
+    },
+    "desc": {
+      "en": "The valve in Crocalor\u2019s flame sac is closely\nconnected to its vocal cords. This Pok\u00e9mon utters\na guttural cry as it spews flames every which\nway."
+    },
+    "forms": []
+  },
+  {
+    "idx": 911,
+    "slug": "skeledirge",
+    "gen": 9,
+    "name": {
+      "ja": "\u30e9\u30a6\u30c9\u30dc\u30fc\u30f3",
+      "zh_hant": "\u9aa8\u7d0b\u5de8\u8072\u9c77",
+      "fr": "Fl\u00e2migator",
+      "de": "Skelokrok",
+      "en": "Skeledirge",
+      "zh_hans": "\u9aa8\u7eb9\u5de8\u58f0\u9cc4"
+    },
+    "desc": {
+      "en": "Skeledirge\u2019s gentle singing soothes the souls of\nall that hear it. It burns its enemies to a crisp\nwith flames of over 5,400 degrees Fahrenheit."
+    },
+    "forms": []
+  },
+  {
+    "idx": 912,
+    "slug": "quaxly",
+    "gen": 9,
+    "name": {
+      "ja": "\u30af\u30ef\u30c3\u30b9",
+      "zh_hant": "\u6f64\u6c34\u9d28",
+      "fr": "Coiffeton",
+      "de": "Kwaks",
+      "en": "Quaxly",
+      "zh_hans": "\u6da6\u6c34\u9e2d"
+    },
+    "desc": {
+      "en": "Its strong legs let it easily swim around in even\nfast-flowing rivers. It likes to keep things tidy\nand is prone to overthinking things."
+    },
+    "forms": []
+  },
+  {
+    "idx": 913,
+    "slug": "quaxwell",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a6\u30a7\u30eb\u30ab\u30e2",
+      "zh_hant": "\u6e67\u8e8d\u9d28",
+      "fr": "Canarbello",
+      "de": "Fuentente",
+      "en": "Quaxwell",
+      "zh_hans": "\u6d8c\u8dc3\u9e2d"
+    },
+    "desc": {
+      "en": "The hardworking Quaxwell observes people and\nPok\u00e9mon from various regions and incorporates\ntheir movements into its own dance routines."
+    },
+    "forms": []
+  },
+  {
+    "idx": 914,
+    "slug": "quaquaval",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a6\u30a7\u30fc\u30cb\u30d0\u30eb",
+      "zh_hant": "\u72c2\u6b61\u6d6a\u821e\u9d28",
+      "fr": "Palmaval",
+      "de": "Bailonda",
+      "en": "Quaquaval",
+      "zh_hans": "\u72c2\u6b22\u6d6a\u821e\u9e2d"
+    },
+    "desc": {
+      "en": "Dancing in ways that evoke far-away places, this\nPok\u00e9mon mesmerizes all that see it. Flourishes of\nits decorative water feathers slice into its\nfoes."
+    },
+    "forms": []
+  },
+  {
+    "idx": 915,
+    "slug": "lechonk",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b0\u30eb\u30c8\u30f3",
+      "zh_hant": "\u611b\u5403\u8c5a",
+      "fr": "Gourmelet",
+      "de": "Ferkuli",
+      "en": "Lechonk",
+      "zh_hans": "\u7231\u5403\u8c5a"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon spurns all but the finest of foods.\nIts body gives off an herblike scent that bug\nPok\u00e9mon detest."
+    },
+    "forms": []
+  },
+  {
+    "idx": 916,
+    "slug": "oinkologne",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d1\u30d5\u30e5\u30fc\u30c8\u30f3",
+      "zh_hant": "\u98c4\u9999\u8c5a",
+      "fr": "Fragroin",
+      "de": "Fragrunz",
+      "en": "Oinkologne",
+      "zh_hans": "\u98d8\u9999\u8c5a"
+    },
+    "desc": {
+      "en": "It entrances female Pok\u00e9mon with the sweet,\nalluring scent that wafts from all over its body."
+    },
+    "forms": []
+  },
+  {
+    "idx": 917,
+    "slug": "tarountula",
+    "gen": 9,
+    "name": {
+      "de": "Tarundel",
+      "ja": "\u30bf\u30de\u30f3\u30c1\u30e5\u30e9",
+      "zh_hant": "\u5718\u73e0\u86db",
+      "fr": "Tissenboule",
+      "en": "Tarountula",
+      "zh_hans": "\u56e2\u73e0\u86db"
+    },
+    "desc": {
+      "en": "The thread it secretes from its rear is as strong\nas wire. The secret behind the thread\u2019s strength\nis the topic of ongoing research."
+    },
+    "forms": []
+  },
+  {
+    "idx": 918,
+    "slug": "spidops",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ef\u30ca\u30a4\u30c0\u30fc",
+      "zh_hant": "\u64cd\u9677\u86db",
+      "fr": "Filentrappe",
+      "de": "Spinsidias",
+      "en": "Spidops",
+      "zh_hans": "\u64cd\u9677\u86db"
+    },
+    "desc": {
+      "en": "Spidops covers its territory in tough, sticky\nthreads to set up traps for intruders."
+    },
+    "forms": []
+  },
+  {
+    "idx": 919,
+    "slug": "nymble",
+    "gen": 9,
+    "name": {
+      "ja": "\u30de\u30e1\u30d0\u30c3\u30bf",
+      "zh_hant": "\u8c46\u87cb\u87c0",
+      "fr": "Lilliterelle",
+      "de": "Micrick",
+      "en": "Nymble",
+      "zh_hans": "\u8c46\u87cb\u87c0"
+    },
+    "desc": {
+      "en": "It\u2019s highly skilled at a fighting style in which\nit uses its jumping capabilities to dodge\nincoming attacks while also dealing damage to\nopponents."
+    },
+    "forms": []
+  },
+  {
+    "idx": 920,
+    "slug": "lokix",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a8\u30af\u30b9\u30ec\u30c3\u30b0",
+      "zh_hant": "\u70c8\u817f\u8757",
+      "fr": "Gambex",
+      "de": "Lextremo",
+      "en": "Lokix",
+      "zh_hans": "\u70c8\u817f\u8757"
+    },
+    "desc": {
+      "en": "It uses its normally folded third set of legs\nwhen in Showdown Mode. This places a huge burden\non its body, so it can\u2019t stay in this mode for\nlong."
+    },
+    "forms": []
+  },
+  {
+    "idx": 921,
+    "slug": "pawmi",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d1\u30e2",
+      "zh_hant": "\u5e03\u64a5",
+      "fr": "Pohm",
+      "de": "Pamo",
+      "en": "Pawmi",
+      "zh_hans": "\u5e03\u62e8"
+    },
+    "desc": {
+      "en": "The pads of its paws are electricity-discharging\norgans. Pawmi fires electricity from its forepaws\nwhile standing unsteadily on its hind legs."
+    },
+    "forms": []
+  },
+  {
+    "idx": 922,
+    "slug": "pawmo",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d1\u30e2\u30c3\u30c8",
+      "zh_hant": "\u5e03\u571f\u64a5",
+      "fr": "Pohmotte",
+      "de": "Pamamo",
+      "en": "Pawmo",
+      "zh_hans": "\u5e03\u571f\u62e8"
+    },
+    "desc": {
+      "en": "Pawmo uses a unique fighting technique in which\nit uses its forepaws to strike foes and zap them\nwith electricity from its paw pads\nsimultaneously."
+    },
+    "forms": []
+  },
+  {
+    "idx": 923,
+    "slug": "pawmot",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d1\u30fc\u30e2\u30c3\u30c8",
+      "zh_hant": "\u5df4\u5e03\u571f\u64a5",
+      "fr": "Pohmarmotte",
+      "de": "Pamomamo",
+      "en": "Pawmot",
+      "zh_hans": "\u5df4\u5e03\u571f\u62e8"
+    },
+    "desc": {
+      "en": "Pawmot\u2019s fluffy fur acts as a battery. It can\nstore the same amount of electricity as an\nelectric car."
+    },
+    "forms": []
+  },
+  {
+    "idx": 924,
+    "slug": "tandemaus",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ef\u30c3\u30ab\u30cd\u30ba\u30df",
+      "zh_hant": "\u4e00\u5c0d\u9f20",
+      "fr": "Compagnol",
+      "de": "Zwieps",
+      "en": "Tandemaus",
+      "zh_hans": "\u4e00\u5bf9\u9f20"
+    },
+    "desc": {
+      "en": "The pair sticks together no matter what. They\nsplit any food they find exactly in half and then\neat it together."
+    },
+    "forms": []
+  },
+  {
+    "idx": 925,
+    "slug": "maushold",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a4\u30c3\u30ab\u30cd\u30ba\u30df",
+      "zh_hant": "\u4e00\u5bb6\u9f20",
+      "fr": "Famignol",
+      "de": "Famieps",
+      "en": "Maushold",
+      "zh_hans": "\u4e00\u5bb6\u9f20"
+    },
+    "desc": {
+      "en": "The larger pair protects the little ones during\nbattles. When facing strong opponents, the whole\ngroup will join the fight."
+    },
+    "forms": []
+  },
+  {
+    "idx": 926,
+    "slug": "fidough",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d1\u30d4\u30e2\u30c3\u30c1",
+      "zh_hant": "\u72d7\u4ed4\u5305",
+      "fr": "P\u00e2tachiot",
+      "de": "Hefel",
+      "en": "Fidough",
+      "zh_hans": "\u72d7\u4ed4\u5305"
+    },
+    "desc": {
+      "en": "The yeast in Fidough\u2019s breath is useful for\ncooking, so this Pok\u00e9mon has been protected by\npeople since long ago."
+    },
+    "forms": []
+  },
+  {
+    "idx": 927,
+    "slug": "dachsbun",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d0\u30a6\u30c3\u30c4\u30a7\u30eb",
+      "zh_hant": "\u9ebb\u82b1\u72ac",
+      "fr": "Briochien",
+      "de": "Backel",
+      "en": "Dachsbun",
+      "zh_hans": "\u9ebb\u82b1\u72ac"
+    },
+    "desc": {
+      "en": "The surface of this Pok\u00e9mon\u2019s skin hardens when\nexposed to intense heat, and its body has an\nappetizing aroma."
+    },
+    "forms": []
+  },
+  {
+    "idx": 928,
+    "slug": "smoliv",
+    "gen": 9,
+    "name": {
+      "ja": "\u30df\u30cb\u30fc\u30d6",
+      "zh_hant": "\u8ff7\u4f60\u8299",
+      "fr": "Olivini",
+      "de": "Olini",
+      "en": "Smoliv",
+      "zh_hans": "\u8ff7\u4f60\u8299"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon converts nutrients into oil, which\nit stores in the fruit on its head. It can easily\ngo a whole week without eating or drinking."
+    },
+    "forms": []
+  },
+  {
+    "idx": 929,
+    "slug": "dolliv",
+    "gen": 9,
+    "name": {
+      "ja": "\u30aa\u30ea\u30fc\u30cb\u30e7",
+      "zh_hant": "\u5967\u5229\u7d10",
+      "fr": "Olivado",
+      "de": "Olivinio",
+      "en": "Dolliv",
+      "zh_hans": "\u5965\u5229\u7ebd"
+    },
+    "desc": {
+      "en": "It basks in the sun to its heart\u2019s content until\nthe fruits on its head ripen. After that, Dolliv\ndeparts from human settlements and goes on a\njourney."
+    },
+    "forms": []
+  },
+  {
+    "idx": 930,
+    "slug": "arboliva",
+    "gen": 9,
+    "name": {
+      "ja": "\u30aa\u30ea\u30fc\u30f4\u30a1",
+      "zh_hant": "\u5967\u5229\u74e6",
+      "fr": "Arboliva",
+      "de": "Olithena",
+      "en": "Arboliva",
+      "zh_hans": "\u5965\u5229\u74e6"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon drives back enemies by launching its\nrich, aromatic oil at them with enough force to\nsmash a boulder."
+    },
+    "forms": []
+  },
+  {
+    "idx": 931,
+    "slug": "squawkabilly",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a4\u30ad\u30ea\u30f3\u30b3",
+      "zh_hant": "\u6012\u9e1a\u54e5",
+      "fr": "Tapato\u00e8s",
+      "de": "Krawalloro",
+      "en": "Squawkabilly",
+      "zh_hans": "\u6012\u9e66\u54e5"
+    },
+    "desc": {
+      "en": "Green-feathered flocks hold the most sway. When\nthey\u2019re out searching for food in the mornings\nand evenings, it gets very noisy."
+    },
+    "forms": []
+  },
+  {
+    "idx": 932,
+    "slug": "nacli",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b3\u30b8\u30aa",
+      "zh_hant": "\u9e7d\u77f3\u5bf6",
+      "fr": "Selutin",
+      "de": "Geosali",
+      "en": "Nacli",
+      "zh_hans": "\u76d0\u77f3\u5b9d"
+    },
+    "desc": {
+      "en": "The ground scrapes its body as it travels,\ncausing it to leave salt behind. Salt is\nconstantly being created and replenished inside\nNacli\u2019s body."
+    },
+    "forms": []
+  },
+  {
+    "idx": 933,
+    "slug": "naclstack",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b8\u30aa\u30c5\u30e0",
+      "zh_hant": "\u9e7d\u77f3\u58d8",
+      "fr": "Amassel",
+      "de": "Sedisal",
+      "en": "Naclstack",
+      "zh_hans": "\u76d0\u77f3\u5792"
+    },
+    "desc": {
+      "en": "It compresses rock salt inside its body and\nshoots out hardened salt pellets with enough\nforce to perforate an iron sheet."
+    },
+    "forms": []
+  },
+  {
+    "idx": 934,
+    "slug": "garganacl",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ad\u30e7\u30b8\u30aa\u30fc\u30f3",
+      "zh_hant": "\u9e7d\u77f3\u5de8\u9748",
+      "fr": "Gigansel",
+      "de": "Saltigant",
+      "en": "Garganacl",
+      "zh_hans": "\u76d0\u77f3\u5de8\u7075"
+    },
+    "desc": {
+      "en": "Many Pok\u00e9mon gather around Garganacl, hoping to\nlick at its mineral-rich salt."
+    },
+    "forms": []
+  },
+  {
+    "idx": 935,
+    "slug": "charcadet",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ab\u30eb\u30dc\u30a6",
+      "zh_hant": "\u70ad\u5c0f\u4f8d",
+      "fr": "Charbambin",
+      "de": "Knarbon",
+      "en": "Charcadet",
+      "zh_hans": "\u70ad\u5c0f\u4f8d"
+    },
+    "desc": {
+      "en": "Its firepower increases when it fights, reaching\nover 1,800 degrees Fahrenheit. It likes berries\nthat are rich in fat."
+    },
+    "forms": []
+  },
+  {
+    "idx": 936,
+    "slug": "armarouge",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b0\u30ec\u30f3\u30a2\u30eb\u30de",
+      "zh_hant": "\u7d05\u84ee\u93a7\u9a0e",
+      "fr": "Carmadura",
+      "de": "Crimanzo",
+      "en": "Armarouge",
+      "zh_hans": "\u7ea2\u83b2\u94e0\u9a91"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon clads itself in armor that has been\nfortified by psychic and fire energy, and it\nshoots blazing fireballs."
+    },
+    "forms": []
+  },
+  {
+    "idx": 937,
+    "slug": "ceruledge",
+    "gen": 9,
+    "name": {
+      "ja": "\u30bd\u30a6\u30d6\u30ec\u30a4\u30ba",
+      "zh_hant": "\u84bc\u708e\u5203\u9b3c",
+      "fr": "Malvalame",
+      "de": "Azugladis",
+      "en": "Ceruledge",
+      "zh_hans": "\u82cd\u708e\u5203\u9b3c"
+    },
+    "desc": {
+      "en": "An old set of armor steeped in grudges caused\nthis Pok\u00e9mon\u2019s evolution. Ceruledge cuts its\nenemies to pieces without mercy."
+    },
+    "forms": []
+  },
+  {
+    "idx": 938,
+    "slug": "tadbulb",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ba\u30d4\u30ab",
+      "zh_hant": "\u5149\u86aa\u4ed4",
+      "fr": "T\u00eatampoule",
+      "de": "Blipp",
+      "en": "Tadbulb",
+      "zh_hans": "\u5149\u86aa\u4ed4"
+    },
+    "desc": {
+      "en": "It floats using the electricity stored in its\nbody. When thunderclouds are around, Tadbulb will\nfloat higher off the ground."
+    },
+    "forms": []
+  },
+  {
+    "idx": 939,
+    "slug": "bellibolt",
+    "gen": 9,
+    "name": {
+      "ja": "\u30cf\u30e9\u30d0\u30ea\u30fc",
+      "zh_hant": "\u96fb\u809a\u86d9",
+      "fr": "Ampibidou",
+      "de": "Wampitz",
+      "en": "Bellibolt",
+      "zh_hans": "\u7535\u809a\u86d9"
+    },
+    "desc": {
+      "en": "What appear to be eyeballs are actually organs\nfor discharging the electricity generated by\nBellibolt\u2019s belly-button dynamo."
+    },
+    "forms": []
+  },
+  {
+    "idx": 940,
+    "slug": "wattrel",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ab\u30a4\u30c7\u30f3",
+      "zh_hant": "\u96fb\u6d77\u71d5",
+      "fr": "Zap\u00e9trel",
+      "de": "Voltrel",
+      "en": "Wattrel",
+      "zh_hans": "\u7535\u6d77\u71d5"
+    },
+    "desc": {
+      "en": "These Pok\u00e9mon make their nests on coastal cliffs.\nThe nests have a strange, crackling texture, and\nthey\u2019re a popular delicacy."
+    },
+    "forms": []
+  },
+  {
+    "idx": 941,
+    "slug": "kilowattrel",
+    "gen": 9,
+    "name": {
+      "ja": "\u30bf\u30a4\u30ab\u30a4\u30c7\u30f3",
+      "zh_hant": "\u5927\u96fb\u6d77\u71d5",
+      "fr": "Fulgulairo",
+      "de": "Voltrean",
+      "en": "Kilowattrel",
+      "zh_hans": "\u5927\u7535\u6d77\u71d5"
+    },
+    "desc": {
+      "en": "It uses its throat sac to store electricity\ngenerated by its wings. There\u2019s hardly any oil in\nits feathers, so it is a poor swimmer."
+    },
+    "forms": []
+  },
+  {
+    "idx": 942,
+    "slug": "maschiff",
+    "gen": 9,
+    "name": {
+      "ja": "\u30aa\u30e9\u30c1\u30d5",
+      "zh_hant": "\u5076\u53eb\u7352",
+      "fr": "Grondogue",
+      "de": "Mobtiff",
+      "en": "Maschiff",
+      "zh_hans": "\u5076\u53eb\u7352"
+    },
+    "desc": {
+      "en": "Its well-developed jaw and fangs are strong\nenough to crunch through boulders, and its thick\nfat makes for an excellent defense."
+    },
+    "forms": []
+  },
+  {
+    "idx": 943,
+    "slug": "mabosstiff",
+    "gen": 9,
+    "name": {
+      "ja": "\u30de\u30d5\u30a3\u30c6\u30a3\u30d5",
+      "zh_hant": "\u7352\u6559\u7236",
+      "fr": "Dogrino",
+      "de": "Mastifioso",
+      "en": "Mabosstiff",
+      "zh_hans": "\u7352\u6559\u7236"
+    },
+    "desc": {
+      "en": "Mabosstiff loves playing with children. Though\nusually gentle, it takes on an intimidating look\nwhen protecting its family."
+    },
+    "forms": []
+  },
+  {
+    "idx": 944,
+    "slug": "shroodle",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b7\u30eb\u30b7\u30e5\u30eb\u30fc",
+      "zh_hant": "\u6ecb\u6c41\u9f34",
+      "fr": "Gribouraigne",
+      "de": "Sproxi",
+      "en": "Shroodle",
+      "zh_hans": "\u6ecb\u6c41\u9f39"
+    },
+    "desc": {
+      "en": "To keep enemies away from its territory, it\npaints markings around its nest using a poisonous\nliquid that has an acrid odor."
+    },
+    "forms": []
+  },
+  {
+    "idx": 945,
+    "slug": "grafaiai",
+    "gen": 9,
+    "name": {
+      "ja": "\u30bf\u30ae\u30f3\u30b0\u30eb",
+      "zh_hant": "\u5857\u6a19\u5ba2",
+      "fr": "Tag-Tag",
+      "de": "Affiti",
+      "en": "Grafaiai",
+      "zh_hans": "\u6d82\u6807\u5ba2"
+    },
+    "desc": {
+      "en": "Each Grafaiai paints its own individual pattern,\nand it will paint that same pattern over and over\nagain throughout its life."
+    },
+    "forms": []
+  },
+  {
+    "idx": 946,
+    "slug": "bramblin",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a2\u30ce\u30af\u30b5",
+      "zh_hant": "\u7d0d\u566c\u8349",
+      "fr": "Virovent",
+      "de": "Weherba",
+      "en": "Bramblin",
+      "zh_hans": "\u7eb3\u566c\u8349"
+    },
+    "desc": {
+      "en": "Not even Bramblin knows where it is headed as it\ntumbles across the wilderness, blown by the wind.\nIt loathes getting wet."
+    },
+    "forms": []
+  },
+  {
+    "idx": 947,
+    "slug": "brambleghast",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a2\u30ce\u30db\u30e9\u30b0\u30b5",
+      "zh_hant": "\u6016\u7d0d\u566c\u8349",
+      "fr": "Virevorreur",
+      "de": "Horrerba",
+      "en": "Brambleghast",
+      "zh_hans": "\u6016\u7eb3\u566c\u8349"
+    },
+    "desc": {
+      "en": "Brambleghast wanders around arid regions. On rare\noccasions, mass outbreaks of these Pok\u00e9mon will\nbury an entire town."
+    },
+    "forms": []
+  },
+  {
+    "idx": 948,
+    "slug": "toedscool",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ce\u30ce\u30af\u30e9\u30b2",
+      "zh_hant": "\u539f\u91ce\u6c34\u6bcd",
+      "fr": "Terracool",
+      "de": "Tentagra",
+      "en": "Toedscool",
+      "zh_hans": "\u539f\u91ce\u6c34\u6bcd"
+    },
+    "desc": {
+      "en": "Though it looks like Tentacool, Toedscool is a\ncompletely different species. Its legs may be\nthin, but it can run at a speed of 30 mph."
+    },
+    "forms": []
+  },
+  {
+    "idx": 949,
+    "slug": "toedscruel",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ea\u30af\u30af\u30e9\u30b2",
+      "zh_hant": "\u9678\u5730\u6c34\u6bcd",
+      "fr": "Terracruel",
+      "de": "Tenterra",
+      "en": "Toedscruel",
+      "zh_hans": "\u9646\u5730\u6c34\u6bcd"
+    },
+    "desc": {
+      "en": "It coils its 10 tentacles around prey and sucks\nout their nutrients, causing the prey pain. The\nfolds along the rim of its head are a popular\ndelicacy."
+    },
+    "forms": []
+  },
+  {
+    "idx": 950,
+    "slug": "klawf",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ac\u30b1\u30ac\u30cb",
+      "zh_hant": "\u6bdb\u5d16\u87f9",
+      "fr": "Craparoi",
+      "de": "Klibbe",
+      "en": "Klawf",
+      "zh_hans": "\u6bdb\u5d16\u87f9"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon lives on sheer cliffs. It sidesteps\nopponents\u2019 attacks, then lunges for their weak\nspots with its claws."
+    },
+    "forms": []
+  },
+  {
+    "idx": 951,
+    "slug": "capsakid",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ab\u30d7\u30b5\u30a4\u30b8",
+      "zh_hant": "\u71b1\u8fa3\u5a03",
+      "fr": "Pimito",
+      "de": "Chilingel",
+      "en": "Capsakid",
+      "zh_hans": "\u70ed\u8fa3\u5a03"
+    },
+    "desc": {
+      "en": "Traditional Paldean dishes can be extremely spicy\nbecause they include the shed front teeth of\nCapsakid among their ingredients."
+    },
+    "forms": []
+  },
+  {
+    "idx": 952,
+    "slug": "scovillain",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b9\u30b3\u30f4\u30a3\u30e9\u30f3",
+      "zh_hant": "\u72e0\u8fa3\u6912",
+      "fr": "Scovilain",
+      "de": "Halupenjo",
+      "en": "Scovillain",
+      "zh_hans": "\u72e0\u8fa3\u6912"
+    },
+    "desc": {
+      "en": "The green head has turned vicious due to the\nspicy chemicals stimulating its brain. Once it\ngoes on a rampage, there is no stopping it."
+    },
+    "forms": []
+  },
+  {
+    "idx": 953,
+    "slug": "rellor",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b7\u30ac\u30ed\u30b3",
+      "zh_hant": "\u87f2\u6efe\u6ce5",
+      "fr": "L\u00e9boul\u00e9rou",
+      "de": "Relluk",
+      "en": "Rellor",
+      "zh_hans": "\u866b\u6eda\u6ce5"
+    },
+    "desc": {
+      "en": "It rolls its mud ball around while the energy it\nneeds for evolution matures. Eventually the time\ncomes for it to evolve."
+    },
+    "forms": []
+  },
+  {
+    "idx": 954,
+    "slug": "rabsca",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d9\u30e9\u30ab\u30b9",
+      "zh_hant": "\u87f2\u7532\u8056",
+      "fr": "B\u00e9rasca",
+      "de": "Skarabaks",
+      "en": "Rabsca",
+      "zh_hans": "\u866b\u7532\u5723"
+    },
+    "desc": {
+      "en": "An infant sleeps inside the ball. Rabsca rolls\nthe ball soothingly with its legs to ensure the\ninfant sleeps comfortably."
+    },
+    "forms": []
+  },
+  {
+    "idx": 955,
+    "slug": "flittle",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d2\u30e9\u30d2\u30ca",
+      "zh_hant": "\u98c4\u98c4\u96db",
+      "fr": "Flotillon",
+      "de": "Flattutu",
+      "en": "Flittle",
+      "zh_hans": "\u98d8\u98d8\u96cf"
+    },
+    "desc": {
+      "en": "It spends its time running around wastelands. If\nanyone steals its beloved berries, it will chase\nthem down and exact its revenge."
+    },
+    "forms": []
+  },
+  {
+    "idx": 956,
+    "slug": "espathra",
+    "gen": 9,
+    "name": {
+      "ja": "\u30af\u30a8\u30b9\u30d1\u30c8\u30e9",
+      "zh_hant": "\u8d85\u80fd\u8277\u9d15",
+      "fr": "Cl\u00e9opsytra",
+      "de": "Psiopatra",
+      "en": "Espathra",
+      "zh_hans": "\u8d85\u80fd\u8273\u9e35"
+    },
+    "desc": {
+      "en": "It emits psychic power from the gaps between its\nmulticolored frills and sprints at speeds greater\nthan 120 mph."
+    },
+    "forms": []
+  },
+  {
+    "idx": 957,
+    "slug": "tinkatink",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ab\u30cc\u30c1\u30e3\u30f3",
+      "zh_hant": "\u5c0f\u935b\u5320",
+      "fr": "Forgerette",
+      "de": "Forgita",
+      "en": "Tinkatink",
+      "zh_hans": "\u5c0f\u953b\u5320"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon pounds iron scraps together to make\na hammer. It will remake the hammer again and\nagain until it\u2019s satisfied with the result."
+    },
+    "forms": []
+  },
+  {
+    "idx": 958,
+    "slug": "tinkatuff",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ca\u30ab\u30cc\u30c1\u30e3\u30f3",
+      "zh_hant": "\u5de7\u935b\u5320",
+      "fr": "Forgella",
+      "de": "Tafforgita",
+      "en": "Tinkatuff",
+      "zh_hans": "\u5de7\u953b\u5320"
+    },
+    "desc": {
+      "en": "These Pok\u00e9mon make their homes in piles of scrap\nmetal. They test the strength of each other\u2019s\nhammers by smashing them together."
+    },
+    "forms": []
+  },
+  {
+    "idx": 959,
+    "slug": "tinkaton",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c7\u30ab\u30cc\u30c1\u30e3\u30f3",
+      "zh_hant": "\u5de8\u935b\u5320",
+      "fr": "Forgelina",
+      "de": "Granforgita",
+      "en": "Tinkaton",
+      "zh_hans": "\u5de8\u953b\u5320"
+    },
+    "desc": {
+      "en": "The hammer tops 220 pounds, yet it gets swung\naround easily by Tinkaton as it steals whatever\nit pleases and carries its plunder back home."
+    },
+    "forms": []
+  },
+  {
+    "idx": 960,
+    "slug": "wiglett",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a6\u30df\u30c7\u30a3\u30b0\u30c0",
+      "zh_hant": "\u6d77\u5730\u9f20",
+      "fr": "Taupikeau",
+      "de": "Schligda",
+      "en": "Wiglett",
+      "zh_hans": "\u6d77\u5730\u9f20"
+    },
+    "desc": {
+      "en": "Though it looks like Diglett, Wiglett is an\nentirely different species. The resemblance seems\nto be a coincidental result of environmental\nadaptation."
+    },
+    "forms": []
+  },
+  {
+    "idx": 961,
+    "slug": "wugtrio",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a6\u30df\u30c8\u30ea\u30aa",
+      "zh_hant": "\u4e09\u6d77\u5730\u9f20",
+      "fr": "Triopikeau",
+      "de": "Schligdri",
+      "en": "Wugtrio",
+      "zh_hans": "\u4e09\u6d77\u5730\u9f20"
+    },
+    "desc": {
+      "en": "A variety of fish Pok\u00e9mon, Wugtrio was once\nconsidered to be a regional form of Dugtrio."
+    },
+    "forms": []
+  },
+  {
+    "idx": 962,
+    "slug": "bombirdier",
+    "gen": 9,
+    "name": {
+      "ja": "\u30aa\u30c8\u30b7\u30c9\u30ea",
+      "zh_hant": "\u4e0b\u77f3\u9ce5",
+      "fr": "Lestombaile",
+      "de": "Adebom",
+      "en": "Bombirdier",
+      "zh_hans": "\u4e0b\u77f3\u9e1f"
+    },
+    "desc": {
+      "en": "Bombirdier uses the apron on its chest to bundle\nup food, which it carries back to its nest. It\nenjoys dropping things that make loud noises."
+    },
+    "forms": []
+  },
+  {
+    "idx": 963,
+    "slug": "finizen",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ca\u30df\u30a4\u30eb\u30ab",
+      "zh_hant": "\u6ce2\u666e\u6d77\u8c5a",
+      "fr": "Dofin",
+      "de": "Normifin",
+      "en": "Finizen",
+      "zh_hans": "\u6ce2\u666e\u6d77\u8c5a"
+    },
+    "desc": {
+      "en": "Its water ring is made from seawater mixed with a\nsticky fluid that Finizen secretes from its\nblowhole."
+    },
+    "forms": []
+  },
+  {
+    "idx": 964,
+    "slug": "palafin",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a4\u30eb\u30ab\u30de\u30f3",
+      "zh_hant": "\u6d77\u8c5a\u4fe0",
+      "fr": "Superdofin",
+      "de": "Delfinator",
+      "en": "Palafin",
+      "zh_hans": "\u6d77\u8c5a\u4fa0"
+    },
+    "desc": {
+      "en": "Its physical capabilities are no different than a\nFinizen\u2019s, but when its allies are in danger, it\ntransforms and powers itself up."
+    },
+    "forms": []
+  },
+  {
+    "idx": 965,
+    "slug": "varoom",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d6\u30ed\u30ed\u30f3",
+      "zh_hant": "\u5657\u9686\u9686",
+      "fr": "Vrombi",
+      "de": "Knattox",
+      "en": "Varoom",
+      "zh_hans": "\u5657\u9686\u9686"
+    },
+    "desc": {
+      "en": "The steel section is Varoom\u2019s actual body. This\nPok\u00e9mon clings to rocks and converts the minerals\nwithin into energy to fuel its activities."
+    },
+    "forms": []
+  },
+  {
+    "idx": 966,
+    "slug": "revavroom",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d6\u30ed\u30ed\u30ed\u30fc\u30e0",
+      "zh_hant": "\u666e\u9686\u9686\u59c6",
+      "fr": "Vrombotor",
+      "de": "Knattatox",
+      "en": "Revavroom",
+      "zh_hans": "\u666e\u9686\u9686\u59c6"
+    },
+    "desc": {
+      "en": "Revavroom viciously threatens others with the\nsound of its exhaust. It sticks its tongue out\nfrom its cylindrical mouth and sprays toxic\nfluids."
+    },
+    "forms": []
+  },
+  {
+    "idx": 967,
+    "slug": "cyclizar",
+    "gen": 9,
+    "name": {
+      "ja": "\u30e2\u30c8\u30c8\u30ab\u30b2",
+      "zh_hant": "\u6469\u6258\u8725",
+      "fr": "Motorizard",
+      "de": "Mopex",
+      "en": "Cyclizar",
+      "zh_hans": "\u6469\u6258\u8725"
+    },
+    "desc": {
+      "en": "It can sprint at over 70 mph while carrying a\nhuman. The rider\u2019s body heat warms Cyclizar\u2019s\nback and lifts the Pok\u00e9mon\u2019s spirit."
+    },
+    "forms": []
+  },
+  {
+    "idx": 968,
+    "slug": "orthworm",
+    "gen": 9,
+    "name": {
+      "ja": "\u30df\u30df\u30ba\u30ba",
+      "zh_hant": "\u62d6\u62d6\u8693",
+      "fr": "Ferdeter",
+      "de": "Schlurm",
+      "en": "Orthworm",
+      "zh_hans": "\u62d6\u62d6\u8693"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon lives in arid deserts. It maintains\nits metal body by consuming iron from the soil."
+    },
+    "forms": []
+  },
+  {
+    "idx": 969,
+    "slug": "glimmet",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ad\u30e9\u30fc\u30e1",
+      "zh_hant": "\u6676\u5149\u82bd",
+      "fr": "Germ\u00e9clat",
+      "de": "Lumispross",
+      "en": "Glimmet",
+      "zh_hans": "\u6676\u5149\u82bd"
+    },
+    "desc": {
+      "en": "Glimmet\u2019s toxic mineral crystals look just like\nflower petals. This Pok\u00e9mon scatters poisonous\npowder like pollen to protect itself."
+    },
+    "forms": []
+  },
+  {
+    "idx": 970,
+    "slug": "glimmora",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ad\u30e9\u30d5\u30ed\u30eb",
+      "zh_hant": "\u6676\u5149\u82b1",
+      "fr": "Flor\u00e9clat",
+      "de": "Lumiflora",
+      "en": "Glimmora",
+      "zh_hans": "\u6676\u5149\u82b1"
+    },
+    "desc": {
+      "en": "Glimmora\u2019s petals are made of crystallized poison\nenergy. It has recently become evident that these\npetals resemble Tera Jewels."
+    },
+    "forms": []
+  },
+  {
+    "idx": 971,
+    "slug": "greavard",
+    "gen": 9,
+    "name": {
+      "ja": "\u30dc\u30c1",
+      "zh_hant": "\u5893\u4ed4\u72d7",
+      "fr": "Toutombe",
+      "de": "Gruff",
+      "en": "Greavard",
+      "zh_hans": "\u5893\u4ed4\u72d7"
+    },
+    "desc": {
+      "en": "This friendly Pok\u00e9mon doesn\u2019t like being alone.\nPay it even the slightest bit of attention, and\nit will follow you forever."
+    },
+    "forms": []
+  },
+  {
+    "idx": 972,
+    "slug": "houndstone",
+    "gen": 9,
+    "name": {
+      "ja": "\u30cf\u30ab\u30c9\u30c3\u30b0",
+      "zh_hant": "\u5893\u63da\u72ac",
+      "fr": "Tomberro",
+      "de": "Friedwuff",
+      "en": "Houndstone",
+      "zh_hans": "\u5893\u626c\u72ac"
+    },
+    "desc": {
+      "en": "A lovingly mourned Pok\u00e9mon was reborn as\nHoundstone. It doesn\u2019t like anyone touching the\nprotuberance atop its head."
+    },
+    "forms": []
+  },
+  {
+    "idx": 973,
+    "slug": "flamigo",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ab\u30e9\u30df\u30f3\u30b4",
+      "zh_hant": "\u7e8f\u7d05\u9db4",
+      "fr": "Flamenroule",
+      "de": "Flaminkno",
+      "en": "Flamigo",
+      "zh_hans": "\u7e8f\u7ea2\u9e64"
+    },
+    "desc": {
+      "en": "Thanks to a behavior of theirs known as\n\u201csynchronizing,\u201d an entire flock of these Pok\u00e9mon\ncan attack simultaneously in perfect harmony."
+    },
+    "forms": []
+  },
+  {
+    "idx": 974,
+    "slug": "cetoddle",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a2\u30eb\u30af\u30b8\u30e9",
+      "zh_hant": "\u8d70\u9be8",
+      "fr": "Pi\u00e9tac\u00e9",
+      "de": "Flaniwal",
+      "en": "Cetoddle",
+      "zh_hans": "\u8d70\u9cb8"
+    },
+    "desc": {
+      "en": "It lives in frigid regions in pods of five or so\nindividuals. It loves the minerals found in snow\nand ice."
+    },
+    "forms": []
+  },
+  {
+    "idx": 975,
+    "slug": "cetitan",
+    "gen": 9,
+    "name": {
+      "ja": "\u30cf\u30eb\u30af\u30b8\u30e9",
+      "zh_hant": "\u6d69\u5927\u9be8",
+      "fr": "Balbal\u00e8ze",
+      "de": "Kolowal",
+      "en": "Cetitan",
+      "zh_hans": "\u6d69\u5927\u9cb8"
+    },
+    "desc": {
+      "en": "Ice energy builds up in the horn on its upper\njaw, causing the horn to reach cryogenic\ntemperatures that freeze its surroundings."
+    },
+    "forms": []
+  },
+  {
+    "idx": 976,
+    "slug": "veluza",
+    "gen": 9,
+    "name": {
+      "ja": "\u30df\u30ac\u30eb\u30fc\u30b5",
+      "zh_hant": "\u8f15\u8eab\u9c48",
+      "fr": "D\u00e9lestin",
+      "de": "Agiluza",
+      "en": "Veluza",
+      "zh_hans": "\u8f7b\u8eab\u9cd5"
+    },
+    "desc": {
+      "en": "Veluza has excellent regenerative capabilities.\nIt sheds spare flesh from its body to boost its\nagility, then charges at its prey."
+    },
+    "forms": []
+  },
+  {
+    "idx": 977,
+    "slug": "dondozo",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d8\u30a4\u30e9\u30c3\u30b7\u30e3",
+      "zh_hant": "\u5403\u543c\u9738",
+      "fr": "Oyacata",
+      "de": "Heerashai",
+      "en": "Dondozo",
+      "zh_hans": "\u5403\u543c\u9738"
+    },
+    "desc": {
+      "en": "It treats Tatsugiri like its boss and follows it\nloyally. Though powerful, Dondozo is apparently\nnot very smart."
+    },
+    "forms": []
+  },
+  {
+    "idx": 978,
+    "slug": "tatsugiri",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b7\u30e3\u30ea\u30bf\u30c4",
+      "zh_hant": "\u7c73\u7acb\u9f8d",
+      "fr": "Nigirigon",
+      "de": "Nigiragi",
+      "en": "Tatsugiri",
+      "zh_hans": "\u7c73\u7acb\u9f99"
+    },
+    "desc": {
+      "en": "Tatsugiri is an extremely cunning Pok\u00e9mon. It\nfeigns weakness to lure in prey, then orders its\npartner to attack."
+    },
+    "forms": []
+  },
+  {
+    "idx": 979,
+    "slug": "annihilape",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b3\u30ce\u30e8\u30b6\u30eb",
+      "zh_hant": "\u68c4\u4e16\u7334",
+      "fr": "Courrousinge",
+      "de": "Epitaff",
+      "en": "Annihilape",
+      "zh_hans": "\u5f03\u4e16\u7334"
+    },
+    "desc": {
+      "en": "It imbues its fists with the power of the rage\nthat it kept hidden in its heart. Opponents\nstruck by these imbued fists will be shattered to\ntheir core."
+    },
+    "forms": []
+  },
+  {
+    "idx": 980,
+    "slug": "clodsire",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c9\u30aa\u30fc",
+      "zh_hant": "\u571f\u738b",
+      "fr": "Terraiste",
+      "de": "Suelord",
+      "en": "Clodsire",
+      "zh_hans": "\u571f\u738b"
+    },
+    "desc": {
+      "en": "It lives at the bottom of ponds and swamps. It\nwill carry Wooper on its back and ferry them\nacross water from one shore to the other."
+    },
+    "forms": []
+  },
+  {
+    "idx": 981,
+    "slug": "farigiraf",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ea\u30ad\u30ad\u30ea\u30f3",
+      "zh_hant": "\u5947\u9e92\u9e9f",
+      "fr": "Farigiraf",
+      "de": "Farigiraf",
+      "en": "Farigiraf",
+      "zh_hans": "\u5947\u9e92\u9e9f"
+    },
+    "desc": {
+      "en": "The hardened head from the tail protects the head\nof the main body as Farigiraf whips its long neck\naround to headbutt enemies."
+    },
+    "forms": []
+  },
+  {
+    "idx": 982,
+    "slug": "dudunsparce",
+    "gen": 9,
+    "name": {
+      "ja": "\u30ce\u30b3\u30b3\u30c3\u30c1",
+      "zh_hant": "\u571f\u9f8d\u7bc0\u7bc0",
+      "fr": "Deusolourdo",
+      "de": "Dummimisel",
+      "en": "Dudunsparce",
+      "zh_hans": "\u571f\u9f99\u8282\u8282"
+    },
+    "desc": {
+      "en": "It drives enemies out of its nest by sucking in\nenough air to fill its long, narrow lungs, then\nreleasing the air in an intense blast."
+    },
+    "forms": []
+  },
+  {
+    "idx": 983,
+    "slug": "kingambit",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c9\u30c9\u30b2\u30b6\u30f3",
+      "zh_hant": "\u4ec6\u5200\u5c07\u8ecd",
+      "fr": "Scalpereur",
+      "de": "Gladimperio",
+      "en": "Kingambit",
+      "zh_hans": "\u4ec6\u5200\u5c06\u519b"
+    },
+    "desc": {
+      "en": "Though it commands a massive army in battle, it\u2019s\nnot skilled at devising complex strategies. It\njust uses brute strength to keep pushing."
+    },
+    "forms": []
+  },
+  {
+    "idx": 984,
+    "slug": "great-tusk",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a4\u30c0\u30a4\u30ca\u30ad\u30d0",
+      "zh_hant": "\u96c4\u5049\u7259",
+      "fr": "Fort-Ivoire",
+      "de": "Riesenzahn",
+      "en": "Great Tusk",
+      "zh_hans": "\u96c4\u4f1f\u7259"
+    },
+    "desc": {
+      "en": "This creature resembles a mysterious Pok\u00e9mon\nthat, according to a paranormal magazine, has\nlived since ancient times."
+    },
+    "forms": []
+  },
+  {
+    "idx": 985,
+    "slug": "scream-tail",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b5\u30b1\u30d6\u30b7\u30c3\u30dd",
+      "zh_hant": "\u543c\u53eb\u5c3e",
+      "fr": "Hurle-Queue",
+      "de": "Br\u00fcllschweif",
+      "en": "Scream Tail",
+      "zh_hans": "\u543c\u53eb\u5c3e"
+    },
+    "desc": {
+      "en": "It resembles a mysterious Pok\u00e9mon described in a\nparanormal magazine as a Jigglypuff from one\nbillion years ago."
+    },
+    "forms": []
+  },
+  {
+    "idx": 986,
+    "slug": "brute-bonnet",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a2\u30e9\u30d6\u30eb\u30bf\u30b1",
+      "zh_hant": "\u731b\u60e1\u83c7",
+      "fr": "Fongus-Furie",
+      "de": "Wutpilz",
+      "en": "Brute Bonnet",
+      "zh_hans": "\u731b\u6076\u83c7"
+    },
+    "desc": {
+      "en": "It bears a slight resemblance to a Pok\u00e9mon\ndescribed in a dubious magazine as a cross\nbetween a dinosaur and a mushroom."
+    },
+    "forms": []
+  },
+  {
+    "idx": 987,
+    "slug": "flutter-mane",
+    "gen": 9,
+    "name": {
+      "ja": "\u30cf\u30d0\u30bf\u30af\u30ab\u30df",
+      "zh_hant": "\u632f\u7ffc\u9aee",
+      "fr": "Flotte-M\u00e8che",
+      "de": "Flatterhaar",
+      "en": "Flutter Mane",
+      "zh_hans": "\u632f\u7ffc\u53d1"
+    },
+    "desc": {
+      "en": "It has similar features to a ghostly pterosaur\nthat was covered in a paranormal magazine, but\nthe two have little else in common."
+    },
+    "forms": []
+  },
+  {
+    "idx": 988,
+    "slug": "slither-wing",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c1\u30f2\u30cf\u30a6\u30cf\u30cd",
+      "zh_hant": "\u722c\u5730\u7fc5",
+      "fr": "Rampe-Ailes",
+      "de": "Kriechfl\u00fcgel",
+      "en": "Slither Wing",
+      "zh_hans": "\u722c\u5730\u7fc5"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon somewhat resembles an ancient form\nof Volcarona that was introduced in a dubious\nmagazine."
+    },
+    "forms": []
+  },
+  {
+    "idx": 989,
+    "slug": "sandy-shocks",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b9\u30ca\u30ce\u30b1\u30ac\u30ef",
+      "zh_hant": "\u6c99\u9435\u76ae",
+      "fr": "Pelage-Sabl\u00e9",
+      "de": "Sandfell",
+      "en": "Sandy Shocks",
+      "zh_hans": "\u6c99\u94c1\u76ae"
+    },
+    "desc": {
+      "en": "It slightly resembles a Magneton that lived for\n10,000 years and was featured in an article in a\nparanormal magazine."
+    },
+    "forms": []
+  },
+  {
+    "idx": 990,
+    "slug": "iron-treads",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30ef\u30c0\u30c1",
+      "zh_hant": "\u9435\u8f4d\u8de1",
+      "fr": "Roue-de-Fer",
+      "de": "Eisenrad",
+      "en": "Iron Treads",
+      "zh_hans": "\u94c1\u8f4d\u8ff9"
+    },
+    "desc": {
+      "en": "Sightings of this Pok\u00e9mon have occurred in recent\nyears. It resembles a mysterious object described\nin an old expedition journal."
+    },
+    "forms": []
+  },
+  {
+    "idx": 991,
+    "slug": "iron-bundle",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30c4\u30c4\u30df",
+      "zh_hant": "\u9435\u5305\u88b1",
+      "fr": "Hotte-de-Fer",
+      "de": "Eisenb\u00fcndel",
+      "en": "Iron Bundle",
+      "zh_hans": "\u94c1\u5305\u88b1"
+    },
+    "desc": {
+      "en": "It resembles a mysterious object mentioned in an\nold book. There are only two reported sightings\nof this Pok\u00e9mon."
+    },
+    "forms": []
+  },
+  {
+    "idx": 992,
+    "slug": "iron-hands",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30ab\u30a4\u30ca",
+      "zh_hant": "\u9435\u81c2\u8180",
+      "fr": "Paume-de-Fer",
+      "de": "Eisenhand",
+      "en": "Iron Hands",
+      "zh_hans": "\u94c1\u81c2\u8180"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon shares many similarities with Iron\nHands, an object mentioned in a certain\nexpedition journal."
+    },
+    "forms": []
+  },
+  {
+    "idx": 993,
+    "slug": "iron-jugulis",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30b3\u30a6\u30d9",
+      "zh_hant": "\u9435\u8116\u9838",
+      "fr": "T\u00eates-de-Fer",
+      "de": "Eisenhals",
+      "en": "Iron Jugulis",
+      "zh_hans": "\u94c1\u8116\u9888"
+    },
+    "desc": {
+      "en": "It\u2019s possible that Iron Jugulis, an object\ndescribed in an old book, may actually be this\nPok\u00e9mon."
+    },
+    "forms": []
+  },
+  {
+    "idx": 994,
+    "slug": "iron-moth",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30c9\u30af\u30ac",
+      "zh_hant": "\u9435\u6bd2\u86fe",
+      "fr": "Mite-de-Fer",
+      "de": "Eisenfalter",
+      "en": "Iron Moth",
+      "zh_hans": "\u94c1\u6bd2\u86fe"
+    },
+    "desc": {
+      "en": "No records exist of this species being caught.\nData is lacking, but the Pok\u00e9mon\u2019s traits match\nup with an object described in an old book."
+    },
+    "forms": []
+  },
+  {
+    "idx": 995,
+    "slug": "iron-thorns",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30a4\u30d0\u30e9",
+      "zh_hant": "\u9435\u834a\u68d8",
+      "fr": "\u00c9pine-de-Fer",
+      "de": "Eisendorn",
+      "en": "Iron Thorns",
+      "zh_hans": "\u94c1\u8346\u68d8"
+    },
+    "desc": {
+      "en": "Some of its notable features match those of an\nobject named within a certain expedition journal\nas Iron Thorns."
+    },
+    "forms": []
+  },
+  {
+    "idx": 996,
+    "slug": "frigibax",
+    "gen": 9,
+    "name": {
+      "ja": "\u30bb\u30d3\u30a8",
+      "zh_hant": "\u6dbc\u810a\u9f8d",
+      "fr": "Frigodo",
+      "de": "Frospino",
+      "en": "Frigibax",
+      "zh_hans": "\u51c9\u810a\u9f99"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon lives in forests and craggy areas.\nUsing the power of its dorsal fin, it cools the\ninside of its nest like a refrigerator."
+    },
+    "forms": []
+  },
+  {
+    "idx": 997,
+    "slug": "arctibax",
+    "gen": 9,
+    "name": {
+      "ja": "\u30bb\u30b4\u30fc\u30eb",
+      "zh_hant": "\u51cd\u810a\u9f8d",
+      "fr": "Cryodo",
+      "de": "Cryospino",
+      "en": "Arctibax",
+      "zh_hans": "\u51bb\u810a\u9f99"
+    },
+    "desc": {
+      "en": "It attacks with the blade of its frozen dorsal\nfin by doing a front flip in the air. Arctibax\u2019s\nstrong back and legs allow it to pull off this\ntechnique."
+    },
+    "forms": []
+  },
+  {
+    "idx": 998,
+    "slug": "baxcalibur",
+    "gen": 9,
+    "name": {
+      "ja": "\u30bb\u30b0\u30ec\u30a4\u30d6",
+      "zh_hant": "\u621f\u810a\u9f8d",
+      "fr": "Glaivodo",
+      "de": "Espinodon",
+      "en": "Baxcalibur",
+      "zh_hans": "\u621f\u810a\u9f99"
+    },
+    "desc": {
+      "en": "It launches itself into battle by flipping upside\ndown and spewing frigid air from its mouth. It\nfinishes opponents off with its dorsal blade."
+    },
+    "forms": []
+  },
+  {
+    "idx": 999,
+    "slug": "gimmighoul",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b3\u30ec\u30af\u30ec\u30fc",
+      "zh_hant": "\u7d22\u8ca1\u9748",
+      "fr": "Mordudor",
+      "de": "Gierspenst",
+      "en": "Gimmighoul",
+      "zh_hans": "\u7d22\u8d22\u7075"
+    },
+    "desc": {
+      "en": "It lives inside an old treasure chest. Sometimes\nit gets left in shop corners since no one\nrealizes it\u2019s actually a Pok\u00e9mon."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1000,
+    "slug": "gholdengo",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b5\u30fc\u30d5\u30b4\u30fc",
+      "zh_hant": "\u8cfd\u5bcc\u8c6a",
+      "fr": "Gromago",
+      "de": "Monetigo",
+      "en": "Gholdengo",
+      "zh_hans": "\u8d5b\u5bcc\u8c6a"
+    },
+    "desc": {
+      "en": "It has a sturdy body made up of stacked coins.\nGholdengo overwhelms its enemies by firing coin\nafter coin at them in quick succession."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1001,
+    "slug": "wo-chien",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c1\u30aa\u30f3\u30b8\u30a7\u30f3",
+      "zh_hant": "\u53e4\u7c21\u8778",
+      "fr": "Chongjian",
+      "de": "Chongjian",
+      "en": "Wo-Chien",
+      "zh_hans": "\u53e4\u7b80\u8717"
+    },
+    "desc": {
+      "en": "It drains the life-force from vegetation, causing\nnearby forests to instantly wither and fields to\nturn barren."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1002,
+    "slug": "chien-pao",
+    "gen": 9,
+    "name": {
+      "ja": "\u30d1\u30aa\u30b8\u30a2\u30f3",
+      "zh_hant": "\u53e4\u528d\u8c79",
+      "fr": "Baojian",
+      "de": "Baojian",
+      "en": "Chien-Pao",
+      "zh_hans": "\u53e4\u5251\u8c79"
+    },
+    "desc": {
+      "en": "The hatred of those who perished by the sword\nlong ago has clad itself in snow and become a\nPok\u00e9mon."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1003,
+    "slug": "ting-lu",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c7\u30a3\u30f3\u30eb\u30fc",
+      "zh_hant": "\u53e4\u9f0e\u9e7f",
+      "fr": "Dinglu",
+      "de": "Dinglu",
+      "en": "Ting-Lu",
+      "zh_hans": "\u53e4\u9f0e\u9e7f"
+    },
+    "desc": {
+      "en": "It slowly brings its exceedingly heavy head down\nupon the ground, splitting the earth open with\nhuge fissures that run over 160 feet deep."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1004,
+    "slug": "chi-yu",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a4\u30fc\u30e6\u30a4",
+      "zh_hant": "\u53e4\u7389\u9b5a",
+      "fr": "Yuyu",
+      "de": "Yuyu",
+      "en": "Chi-Yu",
+      "zh_hans": "\u53e4\u7389\u9c7c"
+    },
+    "desc": {
+      "en": "The envy accumulated within curved beads that\nsparked multiple conflicts has clad itself in\nfire and become a Pok\u00e9mon."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1005,
+    "slug": "roaring-moon",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c8\u30c9\u30ed\u30af\u30c4\u30ad",
+      "zh_hant": "\u8f5f\u9cf4\u6708",
+      "fr": "Rugit-Lune",
+      "de": "Donnersichel",
+      "en": "Roaring Moon",
+      "zh_hans": "\u8f70\u9e23\u6708"
+    },
+    "desc": {
+      "en": "According to an article in a dubious magazine,\nthis Pok\u00e9mon has some connection to a phenomenon\nthat occurs in a certain region."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1006,
+    "slug": "iron-valiant",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30d6\u30b8\u30f3",
+      "zh_hant": "\u9435\u6b66\u8005",
+      "fr": "Garde-de-Fer",
+      "de": "Eisenkrieger",
+      "en": "Iron Valiant",
+      "zh_hans": "\u94c1\u6b66\u8005"
+    },
+    "desc": {
+      "en": "It\u2019s possible that this is the object listed as\nIron Valiant in a certain expedition journal."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1007,
+    "slug": "koraidon",
+    "gen": 9,
+    "name": {
+      "ja": "\u30b3\u30e9\u30a4\u30c9\u30f3",
+      "zh_hant": "\u6545\u52d2\u9813",
+      "fr": "Koraidon",
+      "de": "Koraidon",
+      "en": "Koraidon",
+      "zh_hans": "\u6545\u52d2\u987f"
+    },
+    "desc": {
+      "en": "This Pok\u00e9mon resembles Cyclizar, but it is far\nburlier and more ferocious. Nothing is known\nabout its ecology or other features."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1008,
+    "slug": "miraidon",
+    "gen": 9,
+    "name": {
+      "ja": "\u30df\u30e9\u30a4\u30c9\u30f3",
+      "zh_hant": "\u5bc6\u52d2\u9813",
+      "fr": "Miraidon",
+      "de": "Miraidon",
+      "en": "Miraidon",
+      "zh_hans": "\u5bc6\u52d2\u987f"
+    },
+    "desc": {
+      "en": "This seems to be the Iron Serpent mentioned in an\nold book. The Iron Serpent is said to have turned\nthe land to ash with its lightning."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1009,
+    "slug": "walking-wake",
+    "gen": 9,
+    "name": {
+      "ja": "\u30a6\u30cd\u30eb\u30df\u30ca\u30e2",
+      "zh_hant": "\u6ce2\u76ea\u6c34",
+      "fr": "Serpente-Eau",
+      "de": "Windewoge",
+      "en": "Walking Wake",
+      "zh_hans": "\u6ce2\u8361\u6c34"
+    },
+    "desc": {
+      "en": "It resembles an illustration published in a\nparanormal magazine, said to be a depiction of a\nsuper-ancient Suicune."
+    },
+    "forms": []
+  },
+  {
+    "idx": 1010,
+    "slug": "iron-leaves",
+    "gen": 9,
+    "name": {
+      "ja": "\u30c6\u30c4\u30ce\u30a4\u30b5\u30cf",
+      "zh_hant": "\u9435\u6591\u8449",
+      "fr": "Vert-de-Fer",
+      "de": "Eisenblatt",
+      "en": "Iron Leaves",
+      "zh_hans": "\u94c1\u6591\u53f6"
+    },
+    "desc": {
+      "en": "According to the few eyewitness accounts that\nexist, it used its shining blades to julienne\nlarge trees and boulders."
+    },
     "forms": []
   }
 ]

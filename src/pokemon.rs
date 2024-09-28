@@ -8,7 +8,6 @@ use crate::error::Error;
 
 #[derive(Debug, Deserialize)]
 pub struct Pokemon {
-    pub idx: u32,
     pub slug: String,
     pub gen: u8,
     pub name: HashMap<String, String>,

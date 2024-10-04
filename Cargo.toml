@@ -24,3 +24,4 @@ thiserror = "1.0.64"
 # Config
 dirs = "5.0.1"
 toml = "0.8.19"
+clap_complete = "4.5.32"

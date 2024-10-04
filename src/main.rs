@@ -46,7 +46,7 @@ struct ShellName {
 
 #[derive(Debug, Args)]
 struct Name {
-    /// Name of the pokemon to show
+    /// Who's that pokemon!?
     name: String,
 
     /// Show an alternative form of the pokemon. Can be one of: mega, mega-x,

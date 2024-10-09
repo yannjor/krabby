@@ -159,6 +159,8 @@ shiny_rate = 0.0078125
 ## Credits
 The pokemon sprites for krabby were generated using sprites from [PokéSprite](https://msikma.github.io/pokesprite/)
 and converted to unicode using Phoney Badger's [pokemon-generator-scripts](https://gitlab.com/phoneybadger/pokemon-generator-scripts).
+The pokemon data was obtained from [PokéAPI](https://github.com/PokeAPI/pokeapi).
+
 
 ## Similar projects
 - [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts)

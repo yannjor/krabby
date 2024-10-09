@@ -1,3 +1,4 @@
+mod cli;
 mod config;
 mod error;
 mod pokemon;
@@ -7,6 +8,7 @@ use error::Error;
 use pokemon::*;
 
 use clap::{Args, Parser, Subcommand};
+use clap_complete::Shell;
 use rand::seq::SliceRandom;
 use rand::Rng;
 use rust_embed::RustEmbed;
@@ -23,6 +25,7 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Commands {
+    Init(ShellName),
     /// Print list of all pokemon
     List,
     /// Select pokemon by name. Generally spelled like in the games.
@@ -37,8 +40,13 @@ enum Commands {
 }
 
 #[derive(Debug, Args)]
+struct ShellName {
+    shell: Shell,
+}
+
+#[derive(Debug, Args)]
 struct Name {
-    /// Name of the pokemon to show
+    /// Who's that pokemon!?
     name: String,
 
     /// Show an alternative form of the pokemon. Can be one of: mega, mega-x,
@@ -224,6 +232,7 @@ fn main() -> Result<(), Error> {
     let pokemon = load_pokemon(&pokemon_db)?;
     let args = Cli::parse();
     match args.command {
+        Commands::Init(shell) => cli::print_completions(shell.shell, &mut cli::build()),
         Commands::List => list_pokemon_names(pokemon),
         Commands::Name(name) => show_pokemon_by_name(&name, pokemon, &config)?,
         Commands::Random(random) => show_random_pokemon(&random, pokemon, &config)?,

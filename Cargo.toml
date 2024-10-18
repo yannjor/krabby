@@ -1,6 +1,6 @@
 [package]
 name = "krabby"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Yann Jorelle <yann@yannjorelle.com>"]
 description = "Print pokemon sprites in your terminal"
 repository = "https://github.com/yannjor/krabby"
@@ -24,3 +24,4 @@ thiserror = "1.0.64"
 # Config
 dirs = "5.0.1"
 toml = "0.8.19"
+clap_complete = "4.5.32"

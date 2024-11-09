@@ -41,7 +41,7 @@ struct Name {
     /// Name of the pokemon to show
     name: String,
 
-    /// Show an alternative form of the pokemon. Can be one of: mega, mega-x,
+    /// Show an alternative form of the pokemon. For example: mega, mega-x,
     /// mega-y, gmax, alola, hisui, galar, paldea
     #[clap(short, long, default_value = "regular")]
     form: String,

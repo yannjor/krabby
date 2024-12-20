@@ -8247,7 +8247,7 @@
       "de": "Es hei\u00dft, Kyogre sei die Personifizierung des Meeres.\nLegenden zufolge hat es in seinem Bestreben, sich die\nNaturenergie anzueignen, viele Male gegen Groudon gek\u00e4mpft.",
       "ja": "\u6d77\u306e\u3000\u5316\u8eab\u3000\u3068 \u4f1d\u308f\u308b\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n\u81ea\u7136\u306e\u30a8\u30cd\u30eb\u30ae\u30fc\u3092\u3000\u6c42\u3081\u3066\u3000\u30b0\u30e9\u30fc\u30c9\u30f3\u3068\n\u4e89\u3044\u3092\u3000\u7e70\u308a\u8fd4\u3057\u305f\u3068\u3044\u3046\u3000\u4f1d\u8aac\u304c\u3000\u3042\u308b\u3002"
     },
-    "forms": []
+    "forms": ["primal"]
   },
   {
     "idx": 383,
@@ -8267,7 +8267,7 @@
       "de": "Mithilfe von Naturenergie kann es eine Protomorphose\ndurchf\u00fchren und so seine urspr\u00fcngliche Form zur\u00fcckerlangen.\nDadurch kann es Magma hervorbringen und\ndie Landmasse vergr\u00f6\u00dfern.",
       "ja": "\u81ea\u7136\u306e\u30a8\u30cd\u30eb\u30ae\u30fc\u306b\u3000\u3088\u3063\u3066\u3000\u30b2\u30f3\u30b7\u30ab\u30a4\u30ad\u3057\n\u672c\u6765\u306e\u3000\u59ff\u3092\u3000\u53d6\u308a\u623b\u3059\u3002\u305d\u306e\u529b\u306f\n\u30de\u30b0\u30de\u3092\u3000\u751f\u307f\u3060\u3057\u3000\u5927\u5730\u3092\u3000\u5e83\u3052\u308b\u3002"
     },
-    "forms": []
+    "forms": ["primal"]
   },
   {
     "idx": 384,

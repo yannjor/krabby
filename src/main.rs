@@ -27,7 +27,7 @@ struct Cli {
 #[derive(Debug, Subcommand)]
 enum Commands {
     /// Generate shell completions
-    Init(ShellName),
+    Completions(ShellName),
     /// Print list of all pokemon
     List,
     /// Select pokemon by name. Generally spelled like in the games.
@@ -276,7 +276,7 @@ fn main() -> Result<(), Error> {
     let pokemon = load_pokemon(&pokemon_db)?;
     let args = Cli::parse();
     match args.command {
-        Commands::Init(shell) => print_completions(shell.shell, &mut build_cli()),
+        Commands::Completions(shell) => print_completions(shell.shell, &mut build_cli()),
         Commands::List => list_pokemon_names(pokemon),
         Commands::Name(name) => show_pokemon_by_name(&name, pokemon, &config)?,
         Commands::Random(random) => show_random_pokemon(&random, pokemon, &config)?,

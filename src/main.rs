@@ -235,7 +235,7 @@ fn build_cli() -> Command {
         arg!(--"no-title" "Do not display pokemon name"),
         arg!(--"padding-left" "Set amount of padding to the left [default: 0]"),
     ];
-    let init = Command::new("init")
+    let completions = Command::new("completions")
         .about("Generate shell completions")
         .args([
             arg!(["bash"]),
@@ -263,7 +263,7 @@ fn build_cli() -> Command {
             arg!(--"no-regional" "Do not show regional pokemon"),
         ]);
 
-    Command::new("krabby").subcommands([init, list, name, random])
+    Command::new("krabby").subcommands([completions, list, name, random])
 }
 
 fn print_completions<G: Generator>(gen: G, cmd: &mut Command) {

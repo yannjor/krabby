@@ -246,9 +246,10 @@ fn build_cli() -> Command {
         ]);
 
     let list = Command::new("list").about("List all names of pokemons");
+
     let name = Command::new("name")
         .about("Select pokemon by name: eg. 'pikachu'")
-        .arg(arg!([name] "Who's that pokemon!?"))
+        .arg(arg!(<NAME> "Name of the pokemon to show"))
         .args(&common_args);
 
     let random = Command::new("random")
@@ -256,7 +257,7 @@ fn build_cli() -> Command {
         .arg(
             arg!([GENERATIONS] "Generation number, range (1-9), or list of generations (1,3,6) [default: 1-9]"),
         )
-        .args(common_args)
+        .args(&common_args)
         .args([
             arg!(--"no-mega" "Do not show mega pokemon"),
             arg!(--"no-gmax" "Do not show gigantamax pokemon"),
@@ -272,7 +273,7 @@ fn print_completions<G: Generator>(gen: G, cmd: &mut Command) {
 
 fn main() -> Result<(), Error> {
     let config = Config::load()?;
-    let pokemon_db = Asset::get("pokemon.json").expect("Could not read pokemond db file");
+    let pokemon_db = Asset::get("pokemon.json").expect("Could not read pokemon db file");
     let pokemon = load_pokemon(&pokemon_db)?;
     let args = Cli::parse();
     match args.command {

@@ -6,7 +6,10 @@ use config::Config;
 use error::Error;
 use pokemon::*;
 
-use clap::{Args, Parser, Subcommand};
+use clap::{arg, Args, Command, Parser, Subcommand};
+use clap_complete::{generate, Generator, Shell};
+use std::io;
+
 use rand::seq::SliceRandom;
 use rand::Rng;
 use rust_embed::RustEmbed;
@@ -23,6 +26,8 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Commands {
+    /// Generate shell completions
+    Completions(ShellName),
     /// Print list of all pokemon
     List,
     /// Select pokemon by name. Generally spelled like in the games.
@@ -34,6 +39,11 @@ enum Commands {
     /// generation or range of generations. The generations can be provided as
     /// a continuous range (eg. 1-3) or as a list of generations (1,3,6)
     Random(Random),
+}
+
+#[derive(Debug, Args)]
+struct ShellName {
+    shell: Shell,
 }
 
 #[derive(Debug, Args)]
@@ -218,12 +228,56 @@ fn show_random_pokemon(
     )
 }
 
+fn build_cli() -> Command {
+    let common_args = [
+        arg!(-i --info "Print pokedex entry (if it exists)"),
+        arg!(-s --shiny "Show the shiny pokemon version instead"),
+        arg!(--"no-title" "Do not display pokemon name"),
+        arg!(--"padding-left" "Set amount of padding to the left [default: 0]"),
+    ];
+    let completions = Command::new("completions")
+        .about("Generate shell completions")
+        .args([
+            arg!(["bash"]),
+            arg!(["zsh"]),
+            arg!(["fish"]),
+            arg!(["powershell"]),
+            arg!(["elvish"]),
+        ]);
+
+    let list = Command::new("list").about("List all names of pokemons");
+
+    let name = Command::new("name")
+        .about("Select pokemon by name: eg. 'pikachu'")
+        .arg(arg!(<NAME> "Name of the pokemon to show"))
+        .args(&common_args);
+
+    let random = Command::new("random")
+        .about("Show random pokemon")
+        .arg(
+            arg!([GENERATIONS] "Generation number, range (1-9), or list of generations (1,3,6) [default: 1-9]"),
+        )
+        .args(&common_args)
+        .args([
+            arg!(--"no-mega" "Do not show mega pokemon"),
+            arg!(--"no-gmax" "Do not show gigantamax pokemon"),
+            arg!(--"no-regional" "Do not show regional pokemon"),
+        ]);
+
+    Command::new("krabby").subcommands([completions, list, name, random])
+}
+
+fn print_completions<G: Generator>(gen: G, cmd: &mut Command) {
+    generate(gen, cmd, cmd.get_name().to_string(), &mut io::stdout());
+}
+
 fn main() -> Result<(), Error> {
     let config = Config::load()?;
-    let pokemon_db = Asset::get("pokemon.json").expect("Could not read pokemond db file");
+    let pokemon_db = Asset::get("pokemon.json").expect("Could not read pokemon db file");
     let pokemon = load_pokemon(&pokemon_db)?;
     let args = Cli::parse();
     match args.command {
+        Commands::Completions(shell) => print_completions(shell.shell, &mut build_cli()),
         Commands::List => list_pokemon_names(pokemon),
         Commands::Name(name) => show_pokemon_by_name(&name, pokemon, &config)?,
         Commands::Random(random) => show_random_pokemon(&random, pokemon, &config)?,

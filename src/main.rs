@@ -25,6 +25,7 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Commands {
+    /// Generate shell completions
     Completions(ShellName),
     /// Print list of all pokemon
     List,

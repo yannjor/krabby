@@ -14,7 +14,7 @@ pub enum Error {
     #[error("Invalid language `{0}`, should be one of [en, fr, de, ja, zh_hans, zh_hant]")]
     InvalidLanguage(String),
 
-    #[error("Invalid generations `{0}`, should be an integers between 1 and 9")]
+    #[error("Invalid generations `{0}`, should be an integer between 1 and 9")]
     InvalidGeneration(String),
 }
 

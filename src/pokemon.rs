@@ -70,11 +70,18 @@ impl PokemonDatabase {
     /// Filter pokemon by generation
     pub fn filter_by_generation(&self, generations: &str) -> Result<Vec<&Pokemon>, Error> {
         let (start_gen, end_gen) = generations.parse_generations()?;
-        Ok(self
+
+        let pokemon: Vec<&Pokemon> = self
             .pokemon
             .iter()
-            .filter(|p| start_gen <= p.gen && p.gen <= end_gen)
-            .collect())
+            .filter(|p| (start_gen..=end_gen).contains(&p.gen))
+            .collect();
+
+        if pokemon.is_empty() {
+            return Err(Error::InvalidGeneration(generations.to_string()));
+        }
+
+        Ok(pokemon)
     }
 
     /// Returns a vector of all pokemon

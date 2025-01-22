@@ -31,26 +31,30 @@ impl Pokemon {
 }
 
 trait GenerationParser {
-    fn parse_generations(&self) -> Result<(u8, u8), Error>;
+    fn parse_generations(&self) -> Result<Vec<u8>, Error>;
 }
 
 impl GenerationParser for &str {
-    fn parse_generations(&self) -> Result<(u8, u8), Error> {
-        let (start_gen, end_gen) = match self.split_once('-') {
-            Some(gens) => gens,
-            None => {
-                let gen_list = self.split(',').collect::<Vec<_>>();
-                let gen = gen_list.choose(&mut rand::thread_rng()).unwrap();
-                (*gen, *gen)
+    fn parse_generations(&self) -> Result<Vec<u8>, Error> {
+        let gens: Vec<u8> = if let Some((start_gen, end_gen)) = self.split_once('-') {
+            let start_gen = start_gen.parse::<u8>();
+            let end_gen = end_gen.parse::<u8>();
+            match (start_gen, end_gen) {
+                (Ok(s), Ok(e)) => (s..=e).collect(),
+                _ => return Err(Error::InvalidGeneration(self.to_string())),
             }
+        } else {
+            self.split(',')
+                .map(|gen| gen.parse::<u8>())
+                .collect::<Result<Vec<_>, _>>()
+                .map_err(|_| Error::InvalidGeneration(self.to_string()))?
         };
 
-        let start_gen = start_gen.parse::<u8>();
-        let end_gen = end_gen.parse::<u8>();
-        match (start_gen, end_gen) {
-            (Ok(s), Ok(e)) => Ok((s, e)),
-            _ => Err(Error::InvalidGeneration(self.to_string())),
+        if gens.is_empty() {
+            return Err(Error::InvalidGeneration(self.to_string()));
         }
+
+        Ok(gens)
     }
 }
 
@@ -69,17 +73,13 @@ impl PokemonDatabase {
 
     /// Filter pokemon by generation
     pub fn filter_by_generation(&self, generations: &str) -> Result<Vec<&Pokemon>, Error> {
-        let (start_gen, end_gen) = generations.parse_generations()?;
+        let gens = generations.parse_generations()?;
 
         let pokemon: Vec<&Pokemon> = self
             .pokemon
             .iter()
-            .filter(|p| (start_gen..=end_gen).contains(&p.gen))
+            .filter(|p| gens.contains(&p.gen))
             .collect();
-
-        if pokemon.is_empty() {
-            return Err(Error::InvalidGeneration(generations.to_string()));
-        }
 
         Ok(pokemon)
     }

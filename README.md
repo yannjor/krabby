@@ -141,6 +141,10 @@ Print a random pokemon excluding megas, gigantamax and regional variants
 ```
 krabby random --no-mega --no-gmax --no-regional
 ```
+Print a random pokemon excluding all variants (like above, including one-offs like `primal`)
+```
+krabby random --no-variant
+```
 
 ## Configuration
 When the program is run, a TOML config file will automatically be created in the user's config

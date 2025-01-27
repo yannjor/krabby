@@ -57,7 +57,7 @@ struct CommonArgs {
 struct List {
     /// Generation number, range (1-9), or list of generations (1,3,6)
     #[clap(default_value = "1-9")]
-    generations: String,
+    generations: Generations,
 }
 
 #[derive(Debug, Args)]
@@ -67,8 +67,8 @@ struct Name {
 
     /// Show an alternative form of the pokemon. For example: mega, mega-x,
     /// mega-y, gmax, alola, hisui, galar, paldea
-    #[clap(short, long, default_value = "regular")]
-    form: String,
+    #[clap(short, long, default_value = "regular", value_parser = Form::from_str)]
+    form: Form,
 
     #[clap(flatten)]
     common: CommonArgs,
@@ -78,7 +78,7 @@ struct Name {
 struct Random {
     /// Generation number, range (1-9), or list of generations (1,3,6)
     #[clap(default_value = "1-9")]
-    generations: String,
+    generations: Generations,
 
     /// Do not show mega pokemon
     #[clap(long)]
@@ -91,6 +91,10 @@ struct Random {
     /// Do not show regional pokemon
     #[clap(long)]
     no_regional: bool,
+
+    /// Do not show any variant-form pokemon
+    #[clap(long)]
+    no_variant: bool,
 
     #[clap(flatten)]
     common: CommonArgs,
@@ -106,7 +110,7 @@ fn main() -> Result<(), Error> {
     let pokemon_db = PokemonDatabase::load(&pokemon_db_file, config)?;
     let args = Cli::parse();
     match args.command {
-        Commands::List(list_args) => pokemon_db.list_pokemon_names(&list_args.generations)?,
+        Commands::List(list_args) => pokemon_db.list_pokemon_names(list_args.generations),
         Commands::Name(name) => pokemon_db.show_pokemon_by_name(&name)?,
         Commands::Random(random) => pokemon_db.show_random_pokemon(&random)?,
     }

@@ -11,6 +11,9 @@ pub enum Error {
     #[error("Invalid pokemon `{0}`")]
     InvalidPokemon(String),
 
+    #[error("Invalid form `{1}` for pokemon `{0}`")]
+    InvalidPokemonForm(String, String),
+
     #[error("Invalid language `{0}`, should be one of [en, fr, de, ja, zh_hans, zh_hant]")]
     InvalidLanguage(String),
 

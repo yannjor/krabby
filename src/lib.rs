@@ -57,10 +57,7 @@ pub fn random_pokemon(options: RandomOptions) -> Result<String, Error> {
 }
 
 fn load_db() -> Result<PokemonDatabase, Error> {
-    let config = Config::load().unwrap_or(Config {
-        language: "en".to_string(),
-        shiny_rate: 1.0 / 32.0,
-    });
+    let config = Config::load().unwrap_or_default();
     let pokemon_db_file = Asset::get("pokemon.json").expect("Could not read pokemon db file");
     PokemonDatabase::load(&pokemon_db_file, config)
 }

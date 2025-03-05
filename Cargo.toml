@@ -13,6 +13,10 @@ categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+default = []
+debug-embed = ["rust-embed/debug-embed"]
+
 [dependencies]
 # Cli
 clap = { version = "4.5.31", features = ["derive"] }

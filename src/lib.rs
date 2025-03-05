@@ -40,20 +40,20 @@ struct Asset;
 
 // Note: Here you may need to refactor your methods so that they return strings
 // instead of directly printing to stdout.
-pub fn list_pokemon(generations: Generations) -> Result<String, Error> {
+pub fn list_pokemon(generations: &Generations) -> Result<String, Error> {
     let pokemon_db = load_db()?;
     Ok(pokemon_db.list_pokemon_names(generations))
 }
 
-pub fn pokemon_by_name(options: NameOptions) -> Result<String, Error> {
+pub fn pokemon_by_name(options: &NameOptions) -> Result<String, Error> {
     let pokemon_db = load_db()?;
     // For example, imagine we refactored show_pokemon_by_name to return a String.
-    pokemon_db.show_pokemon_by_name(&options)
+    pokemon_db.show_pokemon_by_name(options)
 }
 
-pub fn random_pokemon(options: RandomOptions) -> Result<String, Error> {
+pub fn random_pokemon(options: &RandomOptions) -> Result<String, Error> {
     let pokemon_db = load_db()?;
-    pokemon_db.show_random_pokemon(&options)
+    pokemon_db.show_random_pokemon(options)
 }
 
 fn load_db() -> Result<PokemonDatabase, Error> {

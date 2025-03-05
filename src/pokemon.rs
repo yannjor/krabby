@@ -175,8 +175,8 @@ impl PokemonDatabase {
     }
 
     /// Returns the names of all pokemon from the given generations
-    pub fn list_pokemon_names(&self, generations: Generations) -> String {
-        self.filter_by_generation(&generations)
+    pub fn list_pokemon_names(&self, generations: &Generations) -> String {
+        self.filter_by_generation(generations)
             .map(|p| p.slug.clone())
             .collect::<Vec<String>>()
             .join("\n")

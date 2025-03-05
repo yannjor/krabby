@@ -70,7 +70,7 @@ fn main() -> Result<(), Error> {
         Commands::List { generations } => {
             // Convert the generations string into the library’s Generations type.
             let gens = generations.parse::<Generations>()?;
-            list_pokemon(gens)?
+            list_pokemon(&gens)?
         }
         Commands::Name {
             name,
@@ -82,7 +82,7 @@ fn main() -> Result<(), Error> {
         } => {
             // Convert the form string to a Form.
             let form = Form::from_str(&form).unwrap();
-            pokemon_by_name(NameOptions {
+            pokemon_by_name(&NameOptions {
                 name,
                 form,
                 common: PokemonOptions {
@@ -105,7 +105,7 @@ fn main() -> Result<(), Error> {
             padding_left,
         } => {
             let gens = generations.parse::<Generations>()?;
-            random_pokemon(RandomOptions {
+            random_pokemon(&RandomOptions {
                 generations: gens,
                 no_mega,
                 no_gmax,

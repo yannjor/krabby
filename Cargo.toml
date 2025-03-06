@@ -16,6 +16,7 @@ categories = ["command-line-utilities"]
 [features]
 default = []
 debug-embed = ["rust-embed/debug-embed"]
+html = []
 
 [dependencies]
 # Cli
@@ -28,3 +29,6 @@ thiserror = "2.0.12"
 # Config
 dirs = "6.0.0"
 toml = "0.8.20"
+
+[build-dependencies]
+ansi-to-html = "0.2.2"

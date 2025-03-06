@@ -95,9 +95,10 @@ impl Pokemon {
     /// Get the asset slug for the pokemon and resolve shininess
     pub fn get_art_path(&self, form: &Form, shiny: bool) -> Result<String, Error> {
         Ok(format!(
-            "colorscripts/{}/{}",
+            "colorscripts/{}/{}{}",
             if shiny { "shiny" } else { "regular" },
-            self.get_form_slug(form)?
+            self.get_form_slug(form)?,
+            if cfg!(feature = "html") { ".html" } else { "" }
         ))
     }
 

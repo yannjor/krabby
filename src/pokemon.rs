@@ -1,5 +1,5 @@
-use rand::seq::IteratorRandom;
 use rand::Rng;
+use rand::seq::IteratorRandom;
 use rust_embed::EmbeddedFile;
 use serde::Deserialize;
 
@@ -9,7 +9,7 @@ use std::str::{self, FromStr};
 
 use crate::config::Config;
 use crate::error::Error;
-use crate::{Asset, CommonArgs, Name, Random};
+use crate::{Asset, NameOptions, PokemonOptions, RandomOptions};
 
 #[derive(Debug, Deserialize, Clone, PartialEq, Eq, Hash)]
 #[serde(rename_all = "kebab-case")]
@@ -28,21 +28,6 @@ pub enum Form {
 }
 
 impl Form {
-    pub fn from_str(form: &str) -> Result<Form, std::convert::Infallible> {
-        Ok(match form {
-            "regular" => Form::Regular,
-            "mega" => Form::Mega,
-            "mega-x" => Form::MegaX,
-            "mega-y" => Form::MegaY,
-            "gmax" => Form::Gmax,
-            "alola" => Form::Alola,
-            "galar" => Form::Galar,
-            "hisui" => Form::Hisui,
-            "paldea" => Form::Paldea,
-            _ => Form::Other(form.to_string()),
-        })
-    }
-
     pub fn as_str(&self) -> &str {
         match self {
             Form::Regular => "regular",
@@ -59,12 +44,31 @@ impl Form {
     }
 }
 
+impl FromStr for Form {
+    type Err = std::convert::Infallible;
+
+    fn from_str(form: &str) -> Result<Self, Self::Err> {
+        Ok(match form {
+            "regular" => Form::Regular,
+            "mega" => Form::Mega,
+            "mega-x" => Form::MegaX,
+            "mega-y" => Form::MegaY,
+            "gmax" => Form::Gmax,
+            "alola" => Form::Alola,
+            "galar" => Form::Galar,
+            "hisui" => Form::Hisui,
+            "paldea" => Form::Paldea,
+            _ => Form::Other(form.to_string()),
+        })
+    }
+}
+
 #[derive(Debug, Deserialize)]
 pub struct Pokemon {
     /// The asset slug of the pokemon, before any form/shiny resolution
     pub slug: String,
     /// The generation of the pokemon
-    pub gen: u8,
+    pub r#gen: u8,
     /// The name of the pokemon in different languages
     pub name: HashMap<String, String>,
     /// The description of the pokemon in different languages
@@ -91,9 +95,10 @@ impl Pokemon {
     /// Get the asset slug for the pokemon and resolve shininess
     pub fn get_art_path(&self, form: &Form, shiny: bool) -> Result<String, Error> {
         Ok(format!(
-            "colorscripts/{}/{}",
+            "colorscripts/{}/{}{}",
             if shiny { "shiny" } else { "regular" },
-            self.get_form_slug(form)?
+            self.get_form_slug(form)?,
+            if cfg!(feature = "html") { ".html" } else { "" }
         ))
     }
 
@@ -129,7 +134,7 @@ impl FromStr for Generations {
         } else {
             input
                 .split(',')
-                .map(|gen| gen.parse::<u8>())
+                .map(|r#gen| r#gen.parse::<u8>())
                 .collect::<Result<Vec<_>, _>>()
                 .map_err(|_| Error::InvalidGeneration(input.to_string()))?
         };
@@ -162,7 +167,7 @@ impl PokemonDatabase {
     ) -> impl Iterator<Item = &'a Pokemon> {
         self.pokemon
             .iter()
-            .filter(|p| generations.0.contains(&p.gen))
+            .filter(|p| generations.0.contains(&p.r#gen))
     }
 
     /// Returns a vector of all pokemon
@@ -170,14 +175,16 @@ impl PokemonDatabase {
         &self.pokemon
     }
 
-    /// Prints the names of all pokemon from the given generations into stdout
-    pub fn list_pokemon_names(&self, generations: Generations) {
-        self.filter_by_generation(&generations)
-            .for_each(|p| println!("{}", p.slug))
+    /// Returns the names of all pokemon from the given generations
+    pub fn list_pokemon_names(&self, generations: &Generations) -> String {
+        self.filter_by_generation(generations)
+            .map(|p| p.slug.clone())
+            .collect::<Vec<String>>()
+            .join("\n")
     }
 
-    /// Prints the pokemon with the given name into stdout
-    pub fn show_pokemon_by_name(&self, name: &Name) -> Result<(), Error> {
+    /// Returns the pokemon with the given name
+    pub fn show_pokemon_by_name(&self, name: &NameOptions) -> Result<String, Error> {
         let pokemon = self
             .get_all()
             .iter()
@@ -199,14 +206,15 @@ impl PokemonDatabase {
         let art = str::from_utf8(&art).expect("Invalid UTF-8 in pokemon art");
 
         let padding_left = " ".repeat(name.common.padding_left);
+        let mut result = String::new();
 
         if !name.common.no_title {
             if let Some(pokemon_name) = pokemon.name.get(&self.config.language) {
-                print!("{padding_left}{pokemon_name}");
+                result.push_str(&format!("{padding_left}{pokemon_name}"));
                 if name.form != Form::Regular {
-                    print!(" ({})", name.form.as_str());
+                    result.push_str(&format!(" ({})", name.form.as_str()));
                 }
-                println!();
+                result.push('\n');
             } else {
                 return Err(Error::InvalidLanguage(self.config.language.clone()));
             }
@@ -214,23 +222,25 @@ impl PokemonDatabase {
 
         if name.common.info {
             if let Some(description) = pokemon.desc.get(&self.config.language) {
-                description
-                    .lines()
-                    .for_each(|line| println!("{padding_left}{line}"))
+                for line in description.lines() {
+                    result.push_str(&format!("{padding_left}{line}\n"));
+                }
             }
         }
-        println!();
-        art.lines()
-            .for_each(|line| println!("{padding_left}{line}"));
 
-        Ok(())
+        result.push('\n');
+        for line in art.lines() {
+            result.push_str(&format!("{padding_left}{line}\n"));
+        }
+
+        Ok(result)
     }
 
-    /// Prints a random pokemon into stdout
-    pub fn show_random_pokemon(&self, random: &Random) -> Result<(), Error> {
+    /// Returns a random pokemon
+    pub fn show_random_pokemon(&self, random: &RandomOptions) -> Result<String, Error> {
         let pokemon = self
             .filter_by_generation(&random.generations)
-            .choose(&mut rand::thread_rng())
+            .choose(&mut rand::rng())
             .unwrap();
 
         let mut exclude_forms = Vec::new();
@@ -252,18 +262,18 @@ impl PokemonDatabase {
         let form = forms
             .iter()
             .chain(once(&Form::Regular))
-            .choose(&mut rand::thread_rng())
+            .choose(&mut rand::rng())
             .unwrap_or_else(|| panic!("No forms available for {}, somehow", pokemon.slug))
             .to_owned();
 
-        let shiny = rand::thread_rng().gen_bool(self.config.shiny_rate) || random.common.shiny;
+        let shiny = rand::rng().random_bool(self.config.shiny_rate) || random.common.shiny;
 
-        self.show_pokemon_by_name(&Name {
+        self.show_pokemon_by_name(&NameOptions {
             name: pokemon.slug.clone(),
             form,
-            common: CommonArgs {
-                shiny,
+            common: PokemonOptions {
                 info: random.common.info,
+                shiny,
                 no_title: random.common.no_title,
                 padding_left: random.common.padding_left,
             },
@@ -284,7 +294,7 @@ mod tests {
     fn create_test_pokemon() -> Pokemon {
         Pokemon {
             slug: "test".to_string(),
-            gen: 1,
+            r#gen: 1,
             name: HashMap::new(),
             desc: HashMap::new(),
             forms: vec![Form::Regular, Form::Mega, Form::Gmax],
@@ -310,9 +320,11 @@ mod tests {
 
         assert_eq!(pokemon.get_form_slug(&Form::Regular).unwrap(), "test");
         assert_eq!(pokemon.get_form_slug(&Form::Mega).unwrap(), "test-mega");
-        assert!(pokemon
-            .get_form_slug(&Form::Other("nonexistant".to_string()))
-            .is_err());
+        assert!(
+            pokemon
+                .get_form_slug(&Form::Other("nonexistant".to_string()))
+                .is_err()
+        );
     }
 
     #[test]
@@ -370,10 +382,10 @@ mod tests {
         let db =
             PokemonDatabase::load(&pokemon_db, config).expect("Failed to load Pokemon database");
 
-        let name = Name {
+        let name = NameOptions {
             name: "mewtwo".to_string(),
             form: Form::Regular,
-            common: CommonArgs {
+            common: PokemonOptions {
                 shiny: false,
                 info: false,
                 no_title: false,
@@ -394,13 +406,13 @@ mod tests {
         let db =
             PokemonDatabase::load(&pokemon_db, config).expect("Failed to load Pokemon database");
 
-        let random = Random {
+        let random = RandomOptions {
             generations: Generations::from_str("1-3").unwrap(),
             no_mega: false,
             no_gmax: false,
             no_regional: false,
             no_variant: false,
-            common: CommonArgs {
+            common: PokemonOptions {
                 shiny: false,
                 info: false,
                 no_title: false,

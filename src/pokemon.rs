@@ -191,7 +191,9 @@ impl PokemonDatabase {
             ));
         }
 
-        let art_path = pokemon.get_art_path(&name.form, name.common.shiny)?;
+        let shiny = (name.random_shiny && rand::thread_rng().gen_bool(self.config.shiny_rate)) || name.common.shiny;
+
+        let art_path = pokemon.get_art_path(&name.form, shiny)?;
 
         let art = Asset::get(&art_path)
             .unwrap_or_else(|| panic!("Could not read pokemon art from '{}'", art_path))
@@ -267,6 +269,7 @@ impl PokemonDatabase {
                 no_title: random.common.no_title,
                 padding_left: random.common.padding_left,
             },
+            random_shiny: false,
         })
     }
 }
@@ -379,6 +382,7 @@ mod tests {
                 no_title: false,
                 padding_left: 0,
             },
+            random_shiny: false,
         };
 
         assert!(db.show_pokemon_by_name(&name).is_ok());

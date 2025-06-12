@@ -70,6 +70,10 @@ struct Name {
     #[clap(short, long, default_value = "regular", value_parser = Form::from_str)]
     form: Form,
 
+    /// Randomize shininess with configured rate.
+    #[clap(long)]
+    random_shiny: bool,
+
     #[clap(flatten)]
     common: CommonArgs,
 }
